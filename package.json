@@ -17,9 +17,8 @@
     "node": ">=18.19.0"
   },
   "dependencies": {
-    "@azure/abort-controller": "^2.1.2",
+    "@azure/abort-controller": "^1.1.0",
     "@azure/storage-blob": "^12.17.0",
-    "@innovixx/payload-icon-picker-field": "^0.0.4",
     "@payloadcms/db-mongodb": "beta",
     "@payloadcms/next": "beta",
     "@payloadcms/plugin-cloud": "beta",

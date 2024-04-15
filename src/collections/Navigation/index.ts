@@ -4,7 +4,7 @@ import { tenants } from '../Pages/access/tenants'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
 import colorPicker from '../../fields/colourPicker'
-import iconPickerField from '../../fields/iconPickerField'
+import iconPicker from '@/fields/iconPickerField'
 
 export const Navigation: CollectionConfig = {
   slug: 'navigationMenu',
@@ -124,7 +124,7 @@ export const Navigation: CollectionConfig = {
           },
         },
         colorPicker,
-        iconPickerField,
+        iconPicker,
         {
           name: 'children',
           label: 'Children',

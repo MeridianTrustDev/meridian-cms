@@ -17,7 +17,6 @@ const Icon: React.FC<Props> = (props) => {
     admin: {
       className,
       components: { Error = null, Label = null, afterInput = null, beforeInput = null } = {},
-      condition,
       description,
       placeholder,
       readOnly,
