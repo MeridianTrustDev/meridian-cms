@@ -51,6 +51,7 @@ export default buildConfig({
     connectOptions: {
       dbName: 'payload',
     },
+    transactionOptions: false,
   }),
   plugins: [
     cloudStorage({
