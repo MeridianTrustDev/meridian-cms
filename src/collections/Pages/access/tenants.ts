@@ -8,21 +8,17 @@ export const tenants: Access = ({ req: { user }, data }) => {
       (data?.tenant?.id && user?.lastLoggedInTenant?.id === data.tenant.id) ||
       (!user?.lastLoggedInTenant?.id && isSuperAdmin(user)) || {
         // list of documents
-        tenant: !isSuperAdmin(user)
-          ? {
-              exists: true,
-            }
-          : {
-              in: user?.tenants?.map(
-                ({
-                  tenant,
-                }: {
-                  tenant: {
-                    id: string
-                  }
-                }) => tenant.id,
-              ),
-            },
+        tenant: {
+          in: user?.tenants?.map(
+            ({
+              tenant,
+            }: {
+              tenant: {
+                id: string
+              }
+            }) => tenant.id,
+          ),
+        },
       }
     )
   }
