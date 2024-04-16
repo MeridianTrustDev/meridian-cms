@@ -201,7 +201,7 @@ export const Navigation: CollectionConfig = {
               maxDepth: 5,
               filterOptions: ({ data }) => {
                 return {
-                  'tenant.id': {
+                  tenant: {
                     equals: data?.tenant,
                   },
                 }

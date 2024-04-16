@@ -28,9 +28,10 @@ export const Headers: CollectionConfig = {
       name: 'primaryNavigation',
       type: 'relationship',
       relationTo: 'navigationMenu',
+      maxDepth: 5,
       filterOptions: ({ data }) => {
         return {
-          'tenant.id': {
+          tenant: {
             equals: data?.tenant,
           },
         }
@@ -43,7 +44,7 @@ export const Headers: CollectionConfig = {
       maxDepth: 5,
       filterOptions: ({ data }) => {
         return {
-          'tenant.id': {
+          tenant: {
             equals: data?.tenant,
           },
         }
