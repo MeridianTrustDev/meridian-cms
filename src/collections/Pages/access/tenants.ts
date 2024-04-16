@@ -26,7 +26,7 @@ export const tenants: Access = ({ req, data }) => {
       }
     )
   }
-
+  return true
   return (
     (data?.tenant?.id && data.tenant.domains.includes(req.host)) || {
       // list of documents
