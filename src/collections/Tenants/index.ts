@@ -20,16 +20,9 @@ export const Tenants: CollectionConfig = {
       required: true,
     },
     {
-      name: 'domains',
-      type: 'array',
+      name: 'domain',
+      type: 'text',
       index: true,
-      fields: [
-        {
-          name: 'domain',
-          type: 'text',
-          required: true,
-        },
-      ],
     },
   ],
 }
