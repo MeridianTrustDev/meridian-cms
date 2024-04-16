@@ -1,11 +1,11 @@
-import { CollectionConfig } from "payload/types";
-import { tenant } from "../../fields/tenant";
-import { tenants } from "../Pages/access/tenants";
-import { loggedIn } from "../Pages/access/loggedIn";
-import { tenantAdmins } from "../Pages/access/tenantAdmins";
+import { CollectionConfig } from 'payload/types'
+import { tenant } from '../../fields/tenant'
+import { loggedIn } from '../Pages/access/loggedIn'
+import { tenantAdmins } from '../Pages/access/tenantAdmins'
+import { tenants } from '../Pages/access/tenants'
 
 export const Headers: CollectionConfig = {
-  slug: "headers",
+  slug: 'headers',
   access: {
     read: tenants,
     create: loggedIn,
@@ -15,25 +15,25 @@ export const Headers: CollectionConfig = {
 
   fields: [
     {
-      name: "title",
-      type: "text",
+      name: 'title',
+      type: 'text',
       required: true,
     },
     {
-      name: "logo",
-      type: "upload",
-      relationTo: "media",
+      name: 'logo',
+      type: 'upload',
+      relationTo: 'media',
     },
     {
-      name: "primaryNavigation",
-      type: "relationship",
-      relationTo: "navigationMenu",
+      name: 'primaryNavigation',
+      type: 'relationship',
+      relationTo: 'navigationMenu',
     },
     {
-      name: "secondaryNavigation",
-      type: "relationship",
-      relationTo: "navigationMenu",
+      name: 'secondaryNavigation',
+      type: 'relationship',
+      relationTo: 'navigationMenu',
     },
     tenant,
   ],
-};
+}
