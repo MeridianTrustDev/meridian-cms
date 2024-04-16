@@ -28,11 +28,26 @@ export const Headers: CollectionConfig = {
       name: 'primaryNavigation',
       type: 'relationship',
       relationTo: 'navigationMenu',
+      filterOptions: ({ data }) => {
+        return {
+          'tenant.id': {
+            equals: data?.tenant,
+          },
+        }
+      },
     },
     {
       name: 'secondaryNavigation',
       type: 'relationship',
       relationTo: 'navigationMenu',
+      maxDepth: 5,
+      filterOptions: ({ data }) => {
+        return {
+          'tenant.id': {
+            equals: data?.tenant,
+          },
+        }
+      },
     },
     tenant,
   ],

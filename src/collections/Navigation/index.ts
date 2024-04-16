@@ -3,8 +3,6 @@ import { tenant } from '../../fields/tenant'
 import { tenants } from '../Pages/access/tenants'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
-import colorPicker from '../../fields/colourPicker'
-import iconPicker from '@/fields/iconPickerField'
 
 export const Navigation: CollectionConfig = {
   slug: 'navigationMenu',
@@ -45,10 +43,15 @@ export const Navigation: CollectionConfig = {
     {
       name: 'navItems',
       type: 'array',
+      labels: {
+        singular: 'Nav Item',
+        plural: 'Nav Items',
+      },
       admin: {
         components: {
           RowLabel: ({ data, index }) => {
-            return data?.label || `Nav Item ${index + 1}`
+            console.log(data)
+            return data?.title || `Nav Item ${index + 1}`
           },
         },
       },
@@ -84,6 +87,7 @@ export const Navigation: CollectionConfig = {
               label: 'Open in new tab',
               type: 'checkbox',
               admin: {
+                condition: (_, siblingData) => siblingData?.type === 'custom',
                 width: '50%',
                 style: {
                   alignSelf: 'flex-end',
@@ -102,6 +106,9 @@ export const Navigation: CollectionConfig = {
           name: 'showLabel',
           label: 'Show Label',
           type: 'checkbox',
+          admin: {
+            condition: (_) => _.type === 'secondary',
+          },
         },
         {
           name: 'reference',
@@ -123,8 +130,14 @@ export const Navigation: CollectionConfig = {
             condition: (_, siblingData) => siblingData?.type === 'custom',
           },
         },
-        colorPicker,
-        iconPicker,
+        {
+          name: 'icon',
+          label: 'Icon',
+          type: 'text',
+          admin: {
+            condition: (_) => _.type === 'secondary',
+          },
+        },
         {
           name: 'children',
           label: 'Children',
@@ -189,7 +202,15 @@ export const Navigation: CollectionConfig = {
               type: 'relationship',
               relationTo: 'pages',
               required: true,
-              maxDepth: 1,
+              maxDepth: 5,
+              filterOptions: ({ data }) => {
+                return {
+                  'tenant.id': {
+                    equals: data?.tenant,
+                  },
+                }
+              },
+
               admin: {
                 condition: (_, siblingData) => siblingData?.type === 'reference',
               },
