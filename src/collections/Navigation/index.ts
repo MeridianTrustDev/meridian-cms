@@ -3,6 +3,7 @@ import { tenant } from '../../fields/tenant'
 import { tenants } from '../Pages/access/tenants'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
+import { ArrayRowLabel } from './RowLabel'
 
 export const Navigation: CollectionConfig = {
   slug: 'navigationMenu',
@@ -49,10 +50,7 @@ export const Navigation: CollectionConfig = {
       },
       admin: {
         components: {
-          RowLabel: ({ data, index }) => {
-            console.log(data)
-            return data?.title || `Nav Item ${index + 1}`
-          },
+          RowLabel: ArrayRowLabel,
         },
       },
       fields: [
@@ -144,9 +142,7 @@ export const Navigation: CollectionConfig = {
           type: 'array',
           admin: {
             components: {
-              RowLabel: ({ data, index }) => {
-                return data?.label || `Nav Item ${index + 1}`
-              },
+              RowLabel: ArrayRowLabel,
             },
             condition: (_, siblingData) => siblingData?.type === 'parent',
           },
