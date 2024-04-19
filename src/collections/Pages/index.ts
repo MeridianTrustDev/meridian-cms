@@ -7,8 +7,6 @@ import { tenant } from '../../fields/tenant'
 import { MediaBlock } from '../../blocks/MediaBlock'
 import { Columns } from '../../blocks/Columns'
 import { Text } from '../../blocks/Content'
-import { Hero } from '../../blocks/Hero'
-
 export const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
@@ -64,22 +62,38 @@ export const Pages: CollectionConfig = {
           label: 'Content',
           fields: [
             {
-              name: 'pageLayout',
-              type: 'blocks',
-              required: true,
-              blocks: [Columns, MediaBlock, Text],
-              admin: {
-                condition: (data) => data.type === 'page',
-              },
-            },
-            {
-              name: 'homeLayout',
-              type: 'blocks',
-              required: true,
-              blocks: [Columns, Hero],
+              name: 'hero',
+              type: 'group',
               admin: {
                 condition: (data) => data.type === 'home',
               },
+              fields: [
+                {
+                  name: 'slides',
+                  type: 'array',
+                  fields: [
+                    {
+                      name: 'image',
+                      type: 'upload',
+                      relationTo: 'media',
+                    },
+                    {
+                      name: 'primaryText',
+                      type: 'text',
+                    },
+                    {
+                      name: 'secondaryText',
+                      type: 'textarea',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: 'layout',
+              type: 'blocks',
+              required: true,
+              blocks: [Columns, MediaBlock, Text],
             },
           ],
         },

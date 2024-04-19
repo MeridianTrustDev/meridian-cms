@@ -18,8 +18,15 @@ import { Media } from './collections/Media'
 import { Headers } from './collections/Headers'
 import { Navigation } from './collections/Navigation'
 
+import { seo } from '@payloadcms/plugin-seo'
+import type {} from '@payloadcms/plugin-seo'
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+const generateTitle = () => {
+  return 'Stratton School'
+}
 
 const adapter = azureBlobStorageAdapter({
   connectionString: process.env.AZURE_STORAGE_CONNECTION_STRING!,
@@ -61,6 +68,11 @@ export default buildConfig({
           disableLocalStorage: true,
         },
       },
+    }),
+    seo({
+      collections: ['pages'],
+      generateTitle,
+      uploadsCollection: 'media',
     }),
   ],
 })

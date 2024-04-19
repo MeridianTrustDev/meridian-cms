@@ -1368,6 +1368,11 @@
     nodemailer "6.9.10"
     resend "^0.17.2"
 
+"@payloadcms/plugin-seo@^3.0.0-beta.11":
+  version "3.0.0-beta.11"
+  resolved "https://registry.npmjs.org/@payloadcms/plugin-seo/-/plugin-seo-3.0.0-beta.11.tgz"
+  integrity sha512-QsvhamLPXBEm8u20KaKuBOXuHUdeuRzf5Q9XZ5ep/xZnVO2j4GNTV6sFQ5Ah4aL5rC0QDH7OpWCzzOco0TUYBQ==
+
 "@payloadcms/richtext-lexical@beta":
   version "3.0.0-beta.10"
   resolved "https://registry.npmjs.org/@payloadcms/richtext-lexical/-/richtext-lexical-3.0.0-beta.10.tgz"
@@ -1394,12 +1399,12 @@
     react-error-boundary "4.0.12"
     ts-essentials "7.0.3"
 
-"@payloadcms/translations@3.0.0-beta.10":
+"@payloadcms/translations@3.0.0-beta.10", "@payloadcms/translations@3.0.0-beta.11":
   version "3.0.0-beta.10"
   resolved "https://registry.npmjs.org/@payloadcms/translations/-/translations-3.0.0-beta.10.tgz"
   integrity sha512-gi9rGeM3+zAD6zSzeHSZNV2XfnyZn6c775+lB8RFnAvhZhC+/3GW88lDgcT+uTQU23jJKX/fIGGj++PVBbtwSw==
 
-"@payloadcms/ui@^3.0.0-beta.10", "@payloadcms/ui@3.0.0-beta.10":
+"@payloadcms/ui@^3.0.0-beta.10", "@payloadcms/ui@3.0.0-beta.10", "@payloadcms/ui@3.0.0-beta.11":
   version "3.0.0-beta.10"
   resolved "https://registry.npmjs.org/@payloadcms/ui/-/ui-3.0.0-beta.10.tgz"
   integrity sha512-tJ7u3qVGMJlU8qFz2hHX1AV4CkJ7UzQw64RW+oAItXCYyCIVbfiv7FaAKbmJFA+oxX8iOC7VosD1pnKPkT8g/A==
