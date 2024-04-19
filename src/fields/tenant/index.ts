@@ -25,12 +25,12 @@ export const tenant: Field = {
     // for super admins, allow them to set the tenant
     beforeChange: [
       async ({ req, req: { user }, data }) => {
-        if ((await isSuperAdmin(req.user)) && data?.tenant) {
+        if ((await isSuperAdmin(req.user!)) && data?.tenant) {
           return data.tenant
         }
 
-        if (user?.lastLoggedInTenant?.id) {
-          return user.lastLoggedInTenant.id
+        if (user?.lastLoggedInTenant) {
+          return user.lastLoggedInTenant
         }
 
         return undefined
