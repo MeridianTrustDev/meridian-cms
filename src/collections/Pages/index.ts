@@ -100,6 +100,11 @@ export const Pages: CollectionConfig = {
       ],
     },
     {
+      name: 'featuredImage',
+      type: 'upload',
+      relationTo: 'media',
+    },
+    {
       name: 'slug',
       label: 'Slug',
       type: 'text',
