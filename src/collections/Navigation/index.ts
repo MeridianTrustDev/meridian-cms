@@ -3,7 +3,7 @@ import { tenant } from '../../fields/tenant'
 import { tenants } from '../Pages/access/tenants'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
-import { ArrayRowLabel } from './RowLabel'
+import { ArrayRowLabel } from '@/components/RowLabel'
 
 export const Navigation: CollectionConfig = {
   slug: 'navigationMenu',

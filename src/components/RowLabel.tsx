@@ -7,6 +7,5 @@ import React from 'react'
 
 export const ArrayRowLabel: RowLabelComponent = () => {
   const { data } = useRowLabel<{ label: string }>()
-  console.log(data)
   return <div>{data.label || 'Untitled'}</div>
 }
