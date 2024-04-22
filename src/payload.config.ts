@@ -20,6 +20,7 @@ import { Navigation } from './collections/Navigation'
 
 import { seo } from '@payloadcms/plugin-seo'
 import type {} from '@payloadcms/plugin-seo'
+import { Events } from './collections/Events'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -46,9 +47,13 @@ export default buildConfig({
     },
   },
   indexSortableFields: true,
-  collections: [Headers, Navigation, Users, Tenants, Pages, Media],
+  collections: [Events, Headers, Navigation, Users, Tenants, Pages, Media],
+  upload: {
+    limits: {
+      fileSize: 5,
+    },
+  },
   editor: lexicalEditor({}),
-  // plugins: [payloadCloud()], // TODO: Re-enable when cloud supports 3.0
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -60,6 +65,7 @@ export default buildConfig({
     },
     transactionOptions: false,
   }),
+
   plugins: [
     cloudStorage({
       collections: {

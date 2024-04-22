@@ -28,6 +28,9 @@ export const Buttons: Block = {
           name: 'backgroundImage',
           type: 'upload',
           relationTo: 'media',
+          filterOptions: {
+            mimeType: { contains: 'image' },
+          },
         },
         {
           type: 'row',

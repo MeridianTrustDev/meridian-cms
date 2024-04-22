@@ -8,6 +8,7 @@ import { MediaBlock } from '../../blocks/MediaBlock'
 import { Columns } from '../../blocks/Columns'
 import { Text } from '../../blocks/Content'
 import { Buttons } from '@/blocks/Buttons'
+import { Events } from '@/blocks/Events'
 export const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
@@ -77,6 +78,9 @@ export const Pages: CollectionConfig = {
                       name: 'image',
                       type: 'upload',
                       relationTo: 'media',
+                      filterOptions: {
+                        mimeType: { contains: 'image' },
+                      },
                     },
                     {
                       name: 'primaryText',
@@ -94,7 +98,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [Buttons, Columns, MediaBlock, Text],
+              blocks: [Buttons, Columns, Events, MediaBlock, Text],
             },
           ],
         },
@@ -104,6 +108,9 @@ export const Pages: CollectionConfig = {
       name: 'featuredImage',
       type: 'upload',
       relationTo: 'media',
+      filterOptions: {
+        mimeType: { contains: 'image' },
+      },
       admin: {
         condition: (data) => data.type === 'page',
       },
