@@ -6,8 +6,8 @@ export const recordLastLoggedInTenant: CollectionAfterLoginHook = async ({ req, 
       .find({
         collection: 'tenants',
         where: {
-          'domains.domain': {
-            in: [req.host],
+          domain: {
+            equals: req.host,
           },
         },
         depth: 0,

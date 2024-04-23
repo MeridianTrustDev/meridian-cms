@@ -21,6 +21,7 @@ import { Navigation } from './collections/Navigation'
 import { seo } from '@payloadcms/plugin-seo'
 import type {} from '@payloadcms/plugin-seo'
 import { Events } from './collections/Events'
+import { Footers } from './collections/Footers'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -47,7 +48,7 @@ export default buildConfig({
     },
   },
   indexSortableFields: true,
-  collections: [Events, Headers, Navigation, Users, Tenants, Pages, Media],
+  collections: [Events, Headers, Footers, Navigation, Users, Tenants, Pages, Media],
   upload: {
     limits: {
       fileSize: 5,
@@ -72,6 +73,9 @@ export default buildConfig({
         media: {
           adapter: adapter,
           disableLocalStorage: true,
+          // generateFileURL: (file) => {
+          //   return `${process.env.AZURE_STORAGE_BASE_URL}/${file.path}`
+          // }
         },
       },
     }),
