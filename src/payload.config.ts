@@ -9,6 +9,8 @@ import { fileURLToPath } from 'url'
 import { Users } from './collections/Users'
 import { cloudStorage } from '@payloadcms/plugin-cloud-storage'
 import { azureBlobStorageAdapter } from '@payloadcms/plugin-cloud-storage/azure'
+import { nestedDocs } from '@payloadcms/plugin-nested-docs'
+
 import Logo from './components/graphics/Logo'
 import Icon from './components/graphics/Icon'
 
@@ -85,9 +87,6 @@ export default buildConfig({
         media: {
           adapter: adapter,
           disableLocalStorage: true,
-          // generateFileURL: (file) => {
-          //   return `${process.env.AZURE_STORAGE_BASE_URL}/${file.path}`
-          // }
         },
       },
     }),
@@ -95,6 +94,11 @@ export default buildConfig({
       collections: ['pages'],
       generateTitle,
       uploadsCollection: 'media',
+    }),
+    nestedDocs({
+      collections: ['pages'],
+      generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
+      generateLabel: (doc, currentDoc) => currentDoc.title as string,
     }),
   ],
 })

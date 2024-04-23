@@ -1368,6 +1368,11 @@
     nodemailer "6.9.10"
     resend "^0.17.2"
 
+"@payloadcms/plugin-nested-docs@^3.0.0-beta.11":
+  version "3.0.0-beta.11"
+  resolved "https://registry.npmjs.org/@payloadcms/plugin-nested-docs/-/plugin-nested-docs-3.0.0-beta.11.tgz"
+  integrity sha512-uOqENrAYxW+uyaZh7qwDZzem+nx06uSrrybSgggdl66Y3laFGnuI6YuuSg3cBqimz60lZ4fK2RBaTQlGhvcXyw==
+
 "@payloadcms/plugin-seo@^3.0.0-beta.11":
   version "3.0.0-beta.11"
   resolved "https://registry.npmjs.org/@payloadcms/plugin-seo/-/plugin-seo-3.0.0-beta.11.tgz"
