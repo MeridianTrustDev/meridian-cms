@@ -1,17 +1,28 @@
-import { CollectionConfig } from "payload/types";
-import path from "path";
+import { CollectionConfig } from 'payload/types'
+import { tenant } from '@/fields/tenant'
 
 export const Media: CollectionConfig = {
-  slug: "media",
+  slug: 'media',
   upload: true,
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: "alt",
-      type: "text",
+      name: 'name',
+      label: 'Friendly Name',
+      type: 'text',
+    },
+    {
+      name: 'alt',
+      type: 'text',
       required: true,
     },
+    {
+      name: 'categories',
+      type: 'array',
+      fields: [{ type: 'text', name: 'category' }],
+    },
+    tenant,
   ],
-};
+}

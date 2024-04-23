@@ -9,6 +9,8 @@ import { Columns } from '../../blocks/Columns'
 import { Text } from '../../blocks/Content'
 import { Buttons } from '@/blocks/Buttons'
 import { Events } from '@/blocks/Events'
+import { File } from '@/blocks/File'
+
 export const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
@@ -98,7 +100,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [Buttons, Columns, Events, MediaBlock, Text],
+              blocks: [Buttons, Columns, Events, MediaBlock, Text, File],
             },
           ],
         },
