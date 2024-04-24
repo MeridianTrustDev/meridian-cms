@@ -10,6 +10,7 @@ import { Text } from '../../blocks/Content'
 import { Buttons } from '@/blocks/Buttons'
 import { Events } from '@/blocks/Events'
 import { File } from '@/blocks/File'
+import { MediaAndText } from '@/blocks/MediaAndText'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -111,7 +112,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [Buttons, Columns, Events, MediaBlock, Text, File],
+              blocks: [Buttons, Columns, Events, MediaBlock, MediaAndText, Text, File],
             },
           ],
         },

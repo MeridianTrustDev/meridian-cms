@@ -1,14 +1,14 @@
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { Block } from "payload/types";
+import { HTMLConverterFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
+import { Block } from 'payload/types'
 
 export const Text: Block = {
-  slug: "text",
+  slug: 'text',
   fields: [
     {
-      name: "text",
-      label: "Text",
-      type: "richText",
+      name: 'text',
+      label: 'Text',
+      type: 'richText',
       editor: lexicalEditor({}),
     },
   ],
-};
+}
