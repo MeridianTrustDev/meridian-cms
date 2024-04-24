@@ -1312,32 +1312,26 @@
     prompts "2.4.2"
     uuid "9.0.0"
 
-"@payloadcms/graphql@3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@payloadcms/graphql/-/graphql-3.0.0-beta.11.tgz"
-  integrity sha512-lpaZiBCntpqeyjoWuePl6CIjMd3z9K8G4cg+D1L+lZK+6w7l5dbT74TjhVpxoRazMlBXYQWh3xPnG/AzSKJccg==
+"@payloadcms/graphql@3.0.0-beta.14":
+  version "3.0.0-beta.14"
+  resolved "https://registry.npmjs.org/@payloadcms/graphql/-/graphql-3.0.0-beta.14.tgz"
+  integrity sha512-+6vN0sfgOMXoTmU2ZfE98lvpIHMimvvIk8VBX2z2wtcpveDxBc1pOuonGz/pxfeFVyNqhWBGdi6I/4suu/sFuA==
   dependencies:
-    graphql "16.8.1"
-    graphql-http "^1.22.0"
-    graphql-playground-html "1.6.30"
-    graphql-query-complexity "0.12.0"
     graphql-scalars "1.22.2"
-    graphql-type-json "0.3.2"
     pluralize "8.0.0"
 
-"@payloadcms/next@3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@payloadcms/next/-/next-3.0.0-beta.11.tgz"
-  integrity sha512-yYy3IymuKjRk63gN1osT9zYZOFsY5dFa21TqZ7wcgpFnrp5Ie70scx366YhxKJJuoHyAVNTMeH+5yNVka7Cy3A==
+"@payloadcms/next@3.0.0-beta.14", "@payloadcms/next@beta":
+  version "3.0.0-beta.14"
+  resolved "https://registry.npmjs.org/@payloadcms/next/-/next-3.0.0-beta.14.tgz"
+  integrity sha512-Mrh+yvg9IHz3q5hYoxQ97Bxd8tIjh8ldgjix8Is0S3yE7HMtz7ukiDzx5M1KpanTq9b3f3qydMZJ3W0enO7Tnw==
   dependencies:
     "@dnd-kit/core" "6.0.8"
-    "@payloadcms/graphql" "3.0.0-beta.11"
-    "@payloadcms/translations" "3.0.0-beta.11"
-    "@payloadcms/ui" "3.0.0-beta.11"
+    "@payloadcms/graphql" "3.0.0-beta.14"
+    "@payloadcms/translations" "3.0.0-beta.14"
+    "@payloadcms/ui" "3.0.0-beta.14"
     "@types/busboy" "^1.5.3"
     busboy "^1.6.0"
     deep-equal "2.2.2"
-    graphql "16.8.1"
     graphql-http "^1.22.0"
     graphql-playground-html "1.6.30"
     path-to-regexp "^6.2.1"
@@ -1347,10 +1341,10 @@
     sass "^1.71.1"
     ws "^8.16.0"
 
-"@payloadcms/plugin-cloud-storage@^3.0.0-beta.11":
-  version "3.0.0-beta.14"
-  resolved "https://registry.npmjs.org/@payloadcms/plugin-cloud-storage/-/plugin-cloud-storage-3.0.0-beta.14.tgz"
-  integrity sha512-ZKN6X1hP+T7kK7z6y8ochx8ZtZNp72uT6YD7jsNyosptkZ/DEZqw+XJT1rRwjWR4Vr3gBXr1xxN++PMUCEfh6w==
+"@payloadcms/plugin-cloud-storage@^3.0.0-beta.10":
+  version "3.0.0-beta.6-86adc6f"
+  resolved "https://registry.npmjs.org/@payloadcms/plugin-cloud-storage/-/plugin-cloud-storage-3.0.0-beta.6-86adc6f.tgz"
+  integrity sha512-IVQ8sfhCHtQGxi/yW9SUPL6KlL+MC+IjLm6NTvprs3ZoodfmCiErn1iF4QpH/nL335SfeBPY8bQwNozbdJvMBQ==
   dependencies:
     find-node-modules "^2.1.3"
     range-parser "^1.2.1"
@@ -1378,10 +1372,10 @@
   resolved "https://registry.npmjs.org/@payloadcms/plugin-seo/-/plugin-seo-3.0.0-beta.14.tgz"
   integrity sha512-k7IDElKYtx0jwQEWFci0GhbfSMxobsT9o1l4Q/dh090IG67NJWUABRyOCp4ziDFm6a5NvJ+Gzt+nOqMBo2yUaQ==
 
-"@payloadcms/richtext-lexical@3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@payloadcms/richtext-lexical/-/richtext-lexical-3.0.0-beta.11.tgz"
-  integrity sha512-nTjvycUhGeUjXgj3UkZw1d5/NhPbydUeBjx0lgGsgNbHGUkezXi8TIiKXC7PFLBbTchAL10lhF2H+QFw3OcTtg==
+"@payloadcms/richtext-lexical@beta":
+  version "3.0.0-beta.14"
+  resolved "https://registry.npmjs.org/@payloadcms/richtext-lexical/-/richtext-lexical-3.0.0-beta.14.tgz"
+  integrity sha512-MAPWwoePYn3kV8OwDCJtDffPoCrRaP/6wDtXxUyx3Obc1HCUyUkhytapcqC5AzAGsIp2hlSdSOvPF5yHJyIbOg==
   dependencies:
     "@faceless-ui/modal" "2.0.2"
     "@lexical/headless" "0.13.1"
@@ -1404,15 +1398,15 @@
     react-error-boundary "4.0.12"
     ts-essentials "7.0.3"
 
-"@payloadcms/translations@3.0.0-beta.11", "@payloadcms/translations@3.0.0-beta.14":
+"@payloadcms/translations@3.0.0-beta.14":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/translations/-/translations-3.0.0-beta.14.tgz"
   integrity sha512-qF7eF7Eu+eScZ5WYzObQNODLmvcsXJ7dr548hdECS803upN5R+ojCu+tV9lfj8XNtS3P8pgA+WQmUg1jauPNuw==
 
-"@payloadcms/ui@3.0.0-beta.11", "@payloadcms/ui@3.0.0-beta.14":
-  version "3.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@payloadcms/ui/-/ui-3.0.0-beta.11.tgz"
-  integrity sha512-QNMrtHf68uIZ42Kc5Om3dRG74j8GUNo08HKZBC/zxYLqzVXSNusfp0Q0hyeeT/m2DZ9l+Dgbl2PImo+tDlgY3Q==
+"@payloadcms/ui@^3.0.0-beta.10", "@payloadcms/ui@3.0.0-beta.14":
+  version "3.0.0-beta.14"
+  resolved "https://registry.npmjs.org/@payloadcms/ui/-/ui-3.0.0-beta.14.tgz"
+  integrity sha512-ew8BKc9xnGi1DI+EXaKRLqk1vjBOIOMYQ/+LIkepVk1u6ahkB5ecCrLdddB6tGU078ZvAb3sONEBlGvbYWW+pg==
   dependencies:
     "@dnd-kit/core" "6.0.8"
     "@dnd-kit/sortable" "7.0.2"
@@ -1420,7 +1414,7 @@
     "@faceless-ui/scroll-info" "1.3.0"
     "@faceless-ui/window-info" "2.1.2"
     "@monaco-editor/react" "4.5.1"
-    "@payloadcms/translations" "3.0.0-beta.11"
+    "@payloadcms/translations" "3.0.0-beta.14"
     body-scroll-lock "4.0.0-beta.0"
     bson-objectid "2.0.4"
     date-fns "3.3.1"
@@ -1983,14 +1977,7 @@
   resolved "https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz"
   integrity sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==
 
-"@swc/helpers@^0.5.0":
-  version "0.5.10"
-  resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.10.tgz"
-  integrity sha512-CU+RF9FySljn7HVSkkjiB84hWkvTaI3rtLvF433+jRSBL2hMu3zX5bGhHS8C80SM++h4xy8hBSnUHFQHmRXSBw==
-  dependencies:
-    tslib "^2.4.0"
-
-"@swc/helpers@0.5.5":
+"@swc/helpers@^0.5.0", "@swc/helpers@0.5.5":
   version "0.5.5"
   resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.5.tgz"
   integrity sha512-KGYxvIOXcceOAbEk4bi/dVLEK9z8sZ0uBB3Il5b1rhfClSpcX0yfRO0KmTkqR2cnQDymwLB+25ZyMzICg/cm/A==
@@ -3350,13 +3337,6 @@ graphql-playground-html@1.6.30:
   dependencies:
     xss "^1.0.6"
 
-graphql-query-complexity@0.12.0:
-  version "0.12.0"
-  resolved "https://registry.npmjs.org/graphql-query-complexity/-/graphql-query-complexity-0.12.0.tgz"
-  integrity sha512-fWEyuSL6g/+nSiIRgIipfI6UXTI7bAxrpPlCY1c0+V3pAEUo1ybaKmSBgNr1ed2r+agm1plJww8Loig9y6s2dw==
-  dependencies:
-    lodash.get "^4.4.2"
-
 graphql-scalars@1.22.2:
   version "1.22.2"
   resolved "https://registry.npmjs.org/graphql-scalars/-/graphql-scalars-1.22.2.tgz"
@@ -3364,12 +3344,7 @@ graphql-scalars@1.22.2:
   dependencies:
     tslib "^2.5.0"
 
-graphql-type-json@0.3.2:
-  version "0.3.2"
-  resolved "https://registry.npmjs.org/graphql-type-json/-/graphql-type-json-0.3.2.tgz"
-  integrity sha512-J+vjof74oMlCWXSvt0DOf2APEdZOCdubEvGDUAlqH//VBYcOYsGgRW7Xzorr44LvkjiuvecWc8fChxuZZbChtg==
-
-"graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^14.6.0 || ^15.0.0 || ^16.0.0", graphql@^16.8.1, "graphql@>=0.11 <=16", graphql@>=0.8.0, graphql@16.8.1:
+"graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", graphql@^16.8.1, "graphql@>=0.11 <=16":
   version "16.8.1"
   resolved "https://registry.npmjs.org/graphql/-/graphql-16.8.1.tgz"
   integrity sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==
@@ -3913,11 +3888,6 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash.get@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.npmjs.org/lodash.get/-/lodash.get-4.4.2.tgz"
-  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
-
 lodash@^4.17.21, lodash@4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
@@ -4164,7 +4134,7 @@ next-tick@^1.1.0, next-tick@1:
   resolved "https://registry.npmjs.org/next-tick/-/next-tick-1.1.0.tgz"
   integrity sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==
 
-next@^14.2.0-canary.23, next@14.2.0-canary.23:
+next@^14.3.0-canary.7, next@14.2.0-canary.23:
   version "14.2.0-canary.23"
   resolved "https://registry.npmjs.org/next/-/next-14.2.0-canary.23.tgz"
   integrity sha512-HuQYIeSlmBmTueVIxn0Zjxx5I4MD6vG3p6AsFySTF7/hMSF5qFUCHGIj3YJRWsDcUw/LQhuGPNLaGUg119YegQ==
@@ -4379,7 +4349,7 @@ path-type@^4.0.0:
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-payload@3.0.0-beta.10, payload@3.0.0-beta.11, payload@3.0.0-beta.14, payload@beta:
+payload@3.0.0-beta.10, payload@3.0.0-beta.11, payload@3.0.0-beta.14, payload@3.0.0-beta.6, payload@beta:
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/payload/-/payload-3.0.0-beta.14.tgz"
   integrity sha512-tyZCkkTGjJXL/lZ2Kgo7s/z1ARGdJB8reSfkrMD6gxtdhVHsChRppn3v0YBq4DddCDQ/phkO0MVVxWrfMvyqBg==
