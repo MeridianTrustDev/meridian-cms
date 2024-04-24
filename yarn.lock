@@ -1278,15 +1278,15 @@
   dependencies:
     sparse-bitfield "^3.0.3"
 
-"@next/env@14.3.0-canary.21":
-  version "14.3.0-canary.21"
-  resolved "https://registry.npmjs.org/@next/env/-/env-14.3.0-canary.21.tgz"
-  integrity sha512-jr902qEpXDofr28/zOiru9iCx6w9RyatGGHswy/Ft8vQiFGC4asbPLjdhsDwWaVxRc5CibrFboTfI/WwgPw6Jg==
+"@next/env@14.2.0-canary.23":
+  version "14.2.0-canary.23"
+  resolved "https://registry.npmjs.org/@next/env/-/env-14.2.0-canary.23.tgz"
+  integrity sha512-cBlFB8Y/iE3K2NX/Km4tP4RZGLsv0D72KI9KxmZepKSkaQBSbtHM0YeHnZ51CFe9UQKzQ/1mPnCY89BjiyIQtQ==
 
-"@next/swc-darwin-arm64@14.3.0-canary.21":
-  version "14.3.0-canary.21"
-  resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.3.0-canary.21.tgz"
-  integrity sha512-2sfKQAW0dBc/1ZL1Eer8g4Ykl2rOY3mTfH32X7wDx3Pf5YmPCjLFf3A7GPugbFeG9ahVLuZDskNjcqw1B54tPg==
+"@next/swc-darwin-arm64@14.2.0-canary.23":
+  version "14.2.0-canary.23"
+  resolved "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.2.0-canary.23.tgz"
+  integrity sha512-K1f7A/0ljZO7IX+M+phguFP8lxdqMgEv1x1+gC+UmyZ1c8Na1PgirGgUwdLKxuNjyxlRqY5lkQ/FDk2FOYBSLA==
 
 "@one-ini/wasm@0.1.1":
   version "0.1.1"
@@ -1298,7 +1298,7 @@
   resolved "https://registry.npmjs.org/@opentelemetry/api/-/api-1.8.0.tgz"
   integrity sha512-I/s6F7yKUDdtMsoBWXJe8Qz40Tui5vsuKCWJEWVL+5q9sSWRzzx6v2KeNsOBEwd94j0eWkpWCH4yB6rZg9Mf0w==
 
-"@payloadcms/db-mongodb@beta":
+"@payloadcms/db-mongodb@3.0.0-beta.14":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/db-mongodb/-/db-mongodb-3.0.0-beta.14.tgz"
   integrity sha512-/jjeGm5aKTGBT7xP/h1fjJJrr5dkvEguwCaYAlC1oS2PGYqrL2CF8yR2S9ouMhbymIJdVwtIk9L5j3UVIaEuuQ==
@@ -1320,7 +1320,7 @@
     graphql-scalars "1.22.2"
     pluralize "8.0.0"
 
-"@payloadcms/next@3.0.0-beta.10", "@payloadcms/next@beta":
+"@payloadcms/next@3.0.0-beta.14":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/next/-/next-3.0.0-beta.14.tgz"
   integrity sha512-Mrh+yvg9IHz3q5hYoxQ97Bxd8tIjh8ldgjix8Is0S3yE7HMtz7ukiDzx5M1KpanTq9b3f3qydMZJ3W0enO7Tnw==
@@ -1341,7 +1341,7 @@
     sass "^1.71.1"
     ws "^8.16.0"
 
-"@payloadcms/plugin-cloud-storage@beta":
+"@payloadcms/plugin-cloud-storage@^3.0.0-beta.14":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/plugin-cloud-storage/-/plugin-cloud-storage-3.0.0-beta.14.tgz"
   integrity sha512-ZKN6X1hP+T7kK7z6y8ochx8ZtZNp72uT6YD7jsNyosptkZ/DEZqw+XJT1rRwjWR4Vr3gBXr1xxN++PMUCEfh6w==
@@ -1362,20 +1362,20 @@
     nodemailer "6.9.10"
     resend "^0.17.2"
 
-"@payloadcms/plugin-nested-docs@beta":
+"@payloadcms/plugin-nested-docs@^3.0.0-beta.11":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/plugin-nested-docs/-/plugin-nested-docs-3.0.0-beta.14.tgz"
   integrity sha512-i6liZbLUPrIWkpLss0ehFqiXV/3GTOYbAn8vDEIStTrN0E1UPMeY/z9aWdufC0xhh6uVlZ+x9Z5O6y0eXcdvQQ==
 
-"@payloadcms/plugin-seo@beta":
+"@payloadcms/plugin-seo@^3.0.0-beta.14":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/plugin-seo/-/plugin-seo-3.0.0-beta.14.tgz"
   integrity sha512-k7IDElKYtx0jwQEWFci0GhbfSMxobsT9o1l4Q/dh090IG67NJWUABRyOCp4ziDFm6a5NvJ+Gzt+nOqMBo2yUaQ==
 
-"@payloadcms/richtext-lexical@beta":
-  version "3.0.0-beta.10"
-  resolved "https://registry.npmjs.org/@payloadcms/richtext-lexical/-/richtext-lexical-3.0.0-beta.10.tgz"
-  integrity sha512-35yHsjuE5fdL6wVrhQxir6OTeyiWql24DuwXMZy1u85USaihsocWwoxxR2p0mZbGyE1nYx8Zs4mOnHoICX+IBg==
+"@payloadcms/richtext-lexical@3.0.0-beta.14":
+  version "3.0.0-beta.14"
+  resolved "https://registry.npmjs.org/@payloadcms/richtext-lexical/-/richtext-lexical-3.0.0-beta.14.tgz"
+  integrity sha512-MAPWwoePYn3kV8OwDCJtDffPoCrRaP/6wDtXxUyx3Obc1HCUyUkhytapcqC5AzAGsIp2hlSdSOvPF5yHJyIbOg==
   dependencies:
     "@faceless-ui/modal" "2.0.2"
     "@lexical/headless" "0.13.1"
@@ -1398,12 +1398,12 @@
     react-error-boundary "4.0.12"
     ts-essentials "7.0.3"
 
-"@payloadcms/translations@3.0.0-beta.10", "@payloadcms/translations@3.0.0-beta.14":
+"@payloadcms/translations@3.0.0-beta.14":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/translations/-/translations-3.0.0-beta.14.tgz"
   integrity sha512-qF7eF7Eu+eScZ5WYzObQNODLmvcsXJ7dr548hdECS803upN5R+ojCu+tV9lfj8XNtS3P8pgA+WQmUg1jauPNuw==
 
-"@payloadcms/ui@3.0.0-beta.10", "@payloadcms/ui@3.0.0-beta.14", "@payloadcms/ui@beta":
+"@payloadcms/ui@3.0.0-beta.14":
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/@payloadcms/ui/-/ui-3.0.0-beta.14.tgz"
   integrity sha512-ew8BKc9xnGi1DI+EXaKRLqk1vjBOIOMYQ/+LIkepVk1u6ahkB5ecCrLdddB6tGU078ZvAb3sONEBlGvbYWW+pg==
@@ -1977,11 +1977,19 @@
   resolved "https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz"
   integrity sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==
 
-"@swc/helpers@^0.5.0", "@swc/helpers@0.5.10":
+"@swc/helpers@^0.5.0":
   version "0.5.10"
   resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.10.tgz"
   integrity sha512-CU+RF9FySljn7HVSkkjiB84hWkvTaI3rtLvF433+jRSBL2hMu3zX5bGhHS8C80SM++h4xy8hBSnUHFQHmRXSBw==
   dependencies:
+    tslib "^2.4.0"
+
+"@swc/helpers@0.5.5":
+  version "0.5.5"
+  resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.5.tgz"
+  integrity sha512-KGYxvIOXcceOAbEk4bi/dVLEK9z8sZ0uBB3Il5b1rhfClSpcX0yfRO0KmTkqR2cnQDymwLB+25ZyMzICg/cm/A==
+  dependencies:
+    "@swc/counter" "^0.1.3"
     tslib "^2.4.0"
 
 "@swc/types@^0.1.5", "@swc/types@>= 0.1":
@@ -4133,28 +4141,28 @@ next-tick@^1.1.0, next-tick@1:
   resolved "https://registry.npmjs.org/next-tick/-/next-tick-1.1.0.tgz"
   integrity sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==
 
-next@^14.3.0-canary.7, next@canary:
-  version "14.3.0-canary.21"
-  resolved "https://registry.npmjs.org/next/-/next-14.3.0-canary.21.tgz"
-  integrity sha512-rNZNoXMgLdgJI0Eikwp+4DG8hdeVBozYbw7FbUWKhfP/Prmb1cZPyzfvd/MTq+PFv140SJtY2wZtotihBgr+Jg==
+next@^14.3.0-canary.7, next@14.2.0-canary.23:
+  version "14.2.0-canary.23"
+  resolved "https://registry.npmjs.org/next/-/next-14.2.0-canary.23.tgz"
+  integrity sha512-HuQYIeSlmBmTueVIxn0Zjxx5I4MD6vG3p6AsFySTF7/hMSF5qFUCHGIj3YJRWsDcUw/LQhuGPNLaGUg119YegQ==
   dependencies:
-    "@next/env" "14.3.0-canary.21"
-    "@swc/helpers" "0.5.10"
+    "@next/env" "14.2.0-canary.23"
+    "@swc/helpers" "0.5.5"
     busboy "1.6.0"
     caniuse-lite "^1.0.30001579"
     graceful-fs "^4.2.11"
     postcss "8.4.31"
     styled-jsx "5.1.1"
   optionalDependencies:
-    "@next/swc-darwin-arm64" "14.3.0-canary.21"
-    "@next/swc-darwin-x64" "14.3.0-canary.21"
-    "@next/swc-linux-arm64-gnu" "14.3.0-canary.21"
-    "@next/swc-linux-arm64-musl" "14.3.0-canary.21"
-    "@next/swc-linux-x64-gnu" "14.3.0-canary.21"
-    "@next/swc-linux-x64-musl" "14.3.0-canary.21"
-    "@next/swc-win32-arm64-msvc" "14.3.0-canary.21"
-    "@next/swc-win32-ia32-msvc" "14.3.0-canary.21"
-    "@next/swc-win32-x64-msvc" "14.3.0-canary.21"
+    "@next/swc-darwin-arm64" "14.2.0-canary.23"
+    "@next/swc-darwin-x64" "14.2.0-canary.23"
+    "@next/swc-linux-arm64-gnu" "14.2.0-canary.23"
+    "@next/swc-linux-arm64-musl" "14.2.0-canary.23"
+    "@next/swc-linux-x64-gnu" "14.2.0-canary.23"
+    "@next/swc-linux-x64-musl" "14.2.0-canary.23"
+    "@next/swc-win32-arm64-msvc" "14.2.0-canary.23"
+    "@next/swc-win32-ia32-msvc" "14.2.0-canary.23"
+    "@next/swc-win32-x64-msvc" "14.2.0-canary.23"
 
 node-abi@^3.3.0:
   version "3.57.0"
@@ -4348,7 +4356,7 @@ path-type@^4.0.0:
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-payload@^3.0.0-beta.14, payload@3.0.0-beta.10, payload@3.0.0-beta.14:
+payload@3.0.0-beta.10, payload@3.0.0-beta.14, payload@beta:
   version "3.0.0-beta.14"
   resolved "https://registry.npmjs.org/payload/-/payload-3.0.0-beta.14.tgz"
   integrity sha512-tyZCkkTGjJXL/lZ2Kgo7s/z1ARGdJB8reSfkrMD6gxtdhVHsChRppn3v0YBq4DddCDQ/phkO0MVVxWrfMvyqBg==
