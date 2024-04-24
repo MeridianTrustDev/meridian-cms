@@ -60,6 +60,17 @@ export const Pages: CollectionConfig = {
                 },
               ],
             },
+            {
+              name: 'featuredImage',
+              type: 'upload',
+              relationTo: 'media',
+              filterOptions: {
+                mimeType: { contains: 'image' },
+              },
+              admin: {
+                condition: (data) => data.type === 'page',
+              },
+            },
           ],
         },
         {
@@ -106,17 +117,7 @@ export const Pages: CollectionConfig = {
         },
       ],
     },
-    {
-      name: 'featuredImage',
-      type: 'upload',
-      relationTo: 'media',
-      filterOptions: {
-        mimeType: { contains: 'image' },
-      },
-      admin: {
-        condition: (data) => data.type === 'page',
-      },
-    },
+
     {
       name: 'slug',
       label: 'Slug',
