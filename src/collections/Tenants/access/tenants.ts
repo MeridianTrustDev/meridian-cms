@@ -9,7 +9,7 @@ export const tenants: Access = ({ req, data }) => {
       (data?.id && req.user?.lastLoggedInTenant?.id === data.id) ||
       (!req.user?.lastLoggedInTenant?.id && isSuperAdmin(req.user)) || {
         // list of documents
-        id: !isSuperAdmin(req.user)
+        id: isSuperAdmin(req.user)
           ? {
               exists: true,
             }
