@@ -15,7 +15,7 @@ export const Users: CollectionConfig = {
     read: adminsAndSelf,
     update: adminsAndSelf,
     delete: adminsAndSelf,
-    admin: isSuperOrTenantAdmin,
+    admin: () => true,
   },
   hooks: {
     afterLogin: [recordLastLoggedInTenant],
