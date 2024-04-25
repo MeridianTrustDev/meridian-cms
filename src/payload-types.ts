@@ -8,7 +8,9 @@
 
 export interface Config {
   collections: {
+    events: Event;
     headers: Header;
+    footers: Footer;
     navigationMenu: NavigationMenu;
     users: User;
     tenants: Tenant;
@@ -22,6 +24,36 @@ export interface Config {
   user: User & {
     collection: 'users';
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "events".
+ */
+export interface Event {
+  id: string;
+  title: string;
+  start: {
+    date: string;
+    time: string;
+  };
+  end: {
+    date: string;
+    time: string;
+  };
+  tenant?: (string | null) | Tenant;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tenants".
+ */
+export interface Tenant {
+  id: string;
+  name: string;
+  domain?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -43,7 +75,15 @@ export interface Header {
  */
 export interface Media {
   id: string;
+  name?: string | null;
   alt: string;
+  categories?:
+    | {
+        category?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  tenant?: (string | null) | Tenant;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -107,6 +147,7 @@ export interface Page {
   publishedAt?: string | null;
   title: string;
   type?: ('page' | 'home') | null;
+  featuredImage?: string | Media | null;
   hero?: {
     slides?:
       | {
@@ -119,6 +160,23 @@ export interface Page {
   };
   layout: (
     | {
+        buttons?:
+          | {
+              text?: string | null;
+              backgroundColour?: string | null;
+              backgroundImage?: string | Media | null;
+              target?: ('reference' | 'custom') | null;
+              newTab?: boolean | null;
+              reference?: (string | null) | Page;
+              url?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'buttonsBlock';
+      }
+    | {
         columns?:
           | {
               content?:
@@ -128,7 +186,7 @@ export interface Page {
                         media: string | Media;
                         id?: string | null;
                         blockName?: string | null;
-                        blockType: 'media-block';
+                        blockType: 'mediaBlock';
                       }
                     | {
                         text?: {
@@ -160,11 +218,40 @@ export interface Page {
         blockType: 'columnsBlock';
       }
     | {
+        mode?: ('calendar' | 'carousel' | 'list') | null;
+        limit?: number | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'eventsBlock';
+      }
+    | {
         position?: ('default' | 'fullscreen') | null;
         media: string | Media;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'media-block';
+        blockType: 'mediaBlock';
+      }
+    | {
+        mediaPosition?: ('left' | 'right') | null;
+        media: string | Media;
+        text: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'mediaAndText';
       }
     | {
         text?: {
@@ -186,6 +273,26 @@ export interface Page {
         blockName?: string | null;
         blockType: 'text';
       }
+    | {
+        mode?: ('named' | 'byCategory') | null;
+        files?:
+          | {
+              name?: string | null;
+              embed?: boolean | null;
+              reference: string | Media;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'fileBlock';
+      }
+    | {
+        myNewTermID?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'vacancies';
+      }
   )[];
   slug?: string | null;
   tenant?: (string | null) | Tenant;
@@ -194,18 +301,33 @@ export interface Page {
     description?: string | null;
     image?: string | Media | null;
   };
+  parent?: (string | null) | Page;
+  breadcrumbs?:
+    | {
+        doc?: (string | null) | Page;
+        url?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "tenants".
+ * via the `definition` "footers".
  */
-export interface Tenant {
+export interface Footer {
   id: string;
-  name: string;
-  domain?: string | null;
+  title: string;
+  logo?: string | Media | null;
+  primaryNavigation?: (string | null) | NavigationMenu;
+  telephone?: string | null;
+  email?: string | null;
+  address?: string | null;
+  disclaimer?: string | null;
+  tenant?: (string | null) | Tenant;
   updatedAt: string;
   createdAt: string;
 }
