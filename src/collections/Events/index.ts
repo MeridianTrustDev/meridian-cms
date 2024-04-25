@@ -7,7 +7,7 @@ import { tenants } from '../Pages/access/tenants'
 export const Events: CollectionConfig = {
   slug: 'events',
   access: {
-    read: tenants,
+    read: () => true,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,

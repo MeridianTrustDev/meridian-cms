@@ -7,7 +7,7 @@ export const Tenants: CollectionConfig = {
   slug: 'tenants',
   access: {
     create: superAdmins,
-    read: tenants,
+    read: () => true,
     update: tenantAdmins,
     delete: superAdmins,
   },
