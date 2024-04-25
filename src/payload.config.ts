@@ -49,18 +49,6 @@ export default buildConfig({
       },
     },
   },
-  cors: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'https://stratton.school',
-    'https://stratton-school.vercel.app',
-  ],
-  csrf: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'https://stratton.school',
-    'https://stratton-school.vercel.app',
-  ],
   indexSortableFields: true,
   collections: [Events, Headers, Footers, Navigation, Users, Tenants, Pages, Media],
   upload: {
