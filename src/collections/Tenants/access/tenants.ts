@@ -1,13 +1,8 @@
 import type { Access } from 'payload/types'
 import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 
-<<<<<<< HEAD
-export const tenants: Access = ({ req, data }) => {
-  return true
-=======
 export const tenants: Access = ({ req: { user }, data }) => {
   console.log(data)
->>>>>>> parent of c4c52b8 (1)
   // If user is logged in, only show documents that belong to the tenants they have access to
 
   return true
