@@ -2,12 +2,12 @@ import { CollectionConfig } from 'payload/types'
 import { tenant } from '../../fields/tenant'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
-import { tenants } from '../Pages/access/tenants'
+import { tenants } from './access/tenants'
 
 export const Footers: CollectionConfig = {
   slug: 'footers',
   access: {
-    read: () => true,
+    read: tenants,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,

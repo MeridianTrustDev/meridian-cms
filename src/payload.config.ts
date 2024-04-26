@@ -48,6 +48,20 @@ export default buildConfig({
         Icon,
       },
     },
+    livePreview: {
+      url(args) {
+        console.log(args)
+        return `${args.data}`
+      },
+      breakpoints: [
+        {
+          label: 'Mobile',
+          name: 'mobile',
+          width: 375,
+          height: 667,
+        },
+      ],
+    },
   },
   indexSortableFields: true,
   collections: [Events, Headers, Footers, Navigation, Users, Tenants, Pages, Media],

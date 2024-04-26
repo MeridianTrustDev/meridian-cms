@@ -51,7 +51,10 @@ export interface Event {
 export interface Tenant {
   id: string;
   name: string;
-  domain?: string | null;
+  domains?: {
+    cmsDomain?: string | null;
+    frontendDomain?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
