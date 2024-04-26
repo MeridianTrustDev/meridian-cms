@@ -7,7 +7,7 @@ export const Tenants: CollectionConfig = {
   slug: 'tenants',
   access: {
     create: superAdmins,
-    read: tenants,
+    read: () => true,
     update: tenantAdmins,
     delete: superAdmins,
   },
@@ -21,21 +21,26 @@ export const Tenants: CollectionConfig = {
       required: true,
     },
     {
-      type: 'group',
-      name: 'domains',
-      fields: [
-        {
-          name: 'cmsDomain',
-          label: 'CMS Domain',
-          type: 'text',
-          index: true,
-        },
-        {
-          name: 'frontendDomain',
-          type: 'text',
-          index: true,
-        },
-      ],
+      name: 'domain',
+      type: 'text',
+      index: true,
     },
+    // {
+    //   type: 'group',
+    //   name: 'domains',
+    //   fields: [
+    //     {
+    //       name: 'cmsDomain',
+    //       label: 'CMS Domain',
+    //       type: 'text',
+    //       index: true,
+    //     },
+    //     {
+    //       name: 'frontendDomain',
+    //       type: 'text',
+    //       index: true,
+    //     },
+    //   ],
+    // },
   ],
 }
