@@ -24,7 +24,7 @@ export const Pages: CollectionConfig = {
     maxPerDoc: 5,
   },
   access: {
-    read: () => true,
+    read: tenants,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,
