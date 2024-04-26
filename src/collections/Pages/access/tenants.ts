@@ -7,7 +7,7 @@ export const tenants: Access = ({ req, data }) => {
     return (
       // individual documents
       (data?.tenant?.id && req.user.tenants.includes(data.tenant.id)) ||
-      (!req.user?.lastLoggedInTenant?.id && isSuperAdmin(req.user)) || {
+      isSuperAdmin(req.user) || {
         // list of documents
         tenant: isSuperAdmin(req.user)
           ? {
