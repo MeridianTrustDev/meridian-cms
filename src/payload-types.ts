@@ -51,7 +51,10 @@ export interface Event {
 export interface Tenant {
   id: string;
   name: string;
-  domain?: string | null;
+  domains?: {
+    cmsDomain?: string | null;
+    frontendDomain?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -347,7 +350,6 @@ export interface User {
         id?: string | null;
       }[]
     | null;
-  lastLoggedInTenant?: (string | null) | Tenant;
   sub?: string | null;
   updatedAt: string;
   createdAt: string;
