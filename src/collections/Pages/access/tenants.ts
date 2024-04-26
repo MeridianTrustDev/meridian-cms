@@ -4,7 +4,6 @@ import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 export const tenants: Access = ({ req, data }) => {
   // If user is logged in, only show documents that belong to the tenants they have access to
   if (req.user) {
-    console.log('batty')
     return (
       // individual documents
       (data?.tenant?.id && req.user?.lastLoggedInTenant?.id === data.tenant.id) ||
