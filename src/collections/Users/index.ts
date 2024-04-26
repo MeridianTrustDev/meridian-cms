@@ -11,7 +11,7 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   access: {
-    read: adminsAndSelf,
+    read: () => true,
     update: adminsAndSelf,
     delete: adminsAndSelf,
     admin: () => true,
