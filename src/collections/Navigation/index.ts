@@ -1,14 +1,14 @@
 import { CollectionConfig } from 'payload/types'
 import { tenant } from '../../fields/tenant'
-import { tenants } from '../Pages/access/tenants'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
 import { ArrayRowLabel } from '@/components/RowLabel'
+import { tenants } from './access/tenants'
 
 export const Navigation: CollectionConfig = {
   slug: 'navigationMenu',
   access: {
-    read: () => true,
+    read: tenants,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,

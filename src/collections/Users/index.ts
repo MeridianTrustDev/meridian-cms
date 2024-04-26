@@ -2,8 +2,6 @@ import { CollectionConfig, FieldHookArgs } from 'payload/types'
 import { superAdminFieldAccess } from '../../access/superAdmins'
 import { tenantAdmins } from './access/tenantAdmins'
 import { adminsAndSelf } from './access/adminsAndSelf'
-import { isSuperOrTenantAdmin } from './utilities/isSuperOrTenantAdmin'
-import { recordLastLoggedInTenant } from './hooks/recordLastLoggedInTenant'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -16,9 +14,6 @@ export const Users: CollectionConfig = {
     update: adminsAndSelf,
     delete: adminsAndSelf,
     admin: () => true,
-  },
-  hooks: {
-    afterLogin: [recordLastLoggedInTenant],
   },
   fields: [
     {
