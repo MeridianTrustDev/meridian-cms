@@ -8,7 +8,7 @@ export const adminsAndSelf: Access = ({ req: { user } }) => {
     const isSuper = isSuperAdmin(user)
 
     // allow super-admins through only if they have not scoped their user via `lastLoggedInTenant`
-    if (isSuper) {
+    if (isSuper && !user?.lastLoggedInTenant) {
       return true
     }
 
@@ -20,28 +20,41 @@ export const adminsAndSelf: Access = ({ req: { user } }) => {
             equals: user.id,
           },
         },
-
-        {
-          'tenants.tenant': {
-            in:
-              user?.tenants
-                ?.map(
-                  ({
-                    tenant,
-                    roles,
-                  }: {
-                    tenant: NonNullable<User['tenants']>[0]['tenant']
-                    roles: NonNullable<User['tenants']>[0]['roles']
-                  }) =>
-                    roles.includes('admin')
-                      ? typeof tenant === 'string'
-                        ? tenant
-                        : tenant.id
-                      : null,
-                )
-                .filter(Boolean) || [],
-          },
-        },
+        ...(isSuper
+          ? [
+              {
+                'tenants.tenant': {
+                  in: [
+                    typeof user?.lastLoggedInTenant === 'string'
+                      ? user?.lastLoggedInTenant
+                      : user?.lastLoggedInTenant?.id,
+                  ].filter(Boolean),
+                },
+              },
+            ]
+          : [
+              {
+                'tenants.tenant': {
+                  in:
+                    user?.tenants
+                      ?.map(
+                        ({
+                          tenant,
+                          roles,
+                        }: {
+                          tenant: NonNullable<User['tenants']>[0]['tenant']
+                          roles: NonNullable<User['tenants']>[0]['roles']
+                        }) =>
+                          roles.includes('admin')
+                            ? typeof tenant === 'string'
+                              ? tenant
+                              : tenant.id
+                            : null,
+                      )
+                      .filter(Boolean) || [],
+                },
+              },
+            ]),
       ],
     }
   }
