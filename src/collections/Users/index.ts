@@ -85,20 +85,6 @@ export const Users: CollectionConfig = {
       ],
     },
     {
-      name: 'lastLoggedInTenant',
-      type: 'relationship',
-      relationTo: 'tenants',
-      index: true,
-      access: {
-        create: () => false,
-        read: tenantAdmins,
-        update: (args) => superAdminFieldAccess(args as FieldHookArgs),
-      },
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
       name: 'sub',
       label: 'sub',
       type: 'text',

@@ -20,21 +20,4 @@ export const tenant: Field = {
     read: () => true,
     update: superAdminFieldAccess,
   },
-  hooks: {
-    // automatically set the tenant to the last logged in tenant
-    // for super admins, allow them to set the tenant
-    beforeChange: [
-      async ({ req, req: { user }, data }) => {
-        if ((await isSuperAdmin(req.user!)) && data?.tenant) {
-          return data.tenant
-        }
-
-        if (user?.lastLoggedInTenant) {
-          return user.lastLoggedInTenant
-        }
-
-        return undefined
-      },
-    ],
-  },
 }
