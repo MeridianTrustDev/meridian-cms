@@ -7,7 +7,7 @@ import { tenants } from './access/tenants'
 export const Footers: CollectionConfig = {
   slug: 'footers',
   access: {
-    read: tenants,
+    read: () => true,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,
