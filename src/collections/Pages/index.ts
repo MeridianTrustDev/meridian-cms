@@ -37,7 +37,7 @@ export const Pages: CollectionConfig = {
   },
 
   access: {
-    read: tenants,
+    read: () => true,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,

@@ -6,7 +6,7 @@ export const Media: CollectionConfig = {
   slug: 'media',
   upload: true,
   access: {
-    read: tenants,
+    read: () => true,
   },
   fields: [
     {

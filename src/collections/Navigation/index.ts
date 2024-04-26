@@ -8,7 +8,7 @@ import { tenants } from './access/tenants'
 export const Navigation: CollectionConfig = {
   slug: 'navigationMenu',
   access: {
-    read: tenants,
+    read: () => true,
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,
