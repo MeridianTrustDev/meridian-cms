@@ -3,6 +3,7 @@ import { superAdminFieldAccess } from '../../access/superAdmins'
 import { tenantAdmins } from './access/tenantAdmins'
 import { adminsAndSelf } from './access/adminsAndSelf'
 import { isSuperOrTenantAdmin } from './utilities/isSuperOrTenantAdmin'
+import { recordLastLoggedInTenant } from './hooks/recordLastLoggedInTenant'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -11,10 +12,13 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   access: {
-    read: () => true,
-    update: () => true,
-    delete: () => true,
+    read: adminsAndSelf,
+    update: adminsAndSelf,
+    delete: adminsAndSelf,
     admin: () => true,
+  },
+  hooks: {
+    afterLogin: [recordLastLoggedInTenant],
   },
   fields: [
     {
@@ -79,6 +83,20 @@ export const Users: CollectionConfig = {
           ],
         },
       ],
+    },
+    {
+      name: 'lastLoggedInTenant',
+      type: 'relationship',
+      relationTo: 'tenants',
+      index: true,
+      access: {
+        create: () => false,
+        read: tenantAdmins,
+        update: (args) => superAdminFieldAccess(args as FieldHookArgs),
+      },
+      admin: {
+        position: 'sidebar',
+      },
     },
     {
       name: 'sub',

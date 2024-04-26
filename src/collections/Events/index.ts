@@ -2,7 +2,7 @@ import { CollectionConfig } from 'payload/types'
 import { tenant } from '../../fields/tenant'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
-import { tenants } from './access/tenants'
+import { tenants } from '../Pages/access/tenants'
 
 export const Events: CollectionConfig = {
   slug: 'events',

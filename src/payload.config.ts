@@ -48,6 +48,7 @@ export default buildConfig({
         Icon,
       },
     },
+<<<<<<< HEAD
     // livePreview: {
     //   url(args) {
     //     console.log(args)
@@ -62,6 +63,8 @@ export default buildConfig({
     //     },
     //   ],
     // },
+=======
+>>>>>>> parent of c4c52b8 (1)
   },
   indexSortableFields: true,
   collections: [Events, Headers, Footers, Navigation, Users, Tenants, Pages, Media],

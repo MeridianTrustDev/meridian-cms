@@ -8,7 +8,7 @@ export const adminsAndSelf: Access = ({ req: { user } }) => {
     const isSuper = isSuperAdmin(user)
 
     // allow super-admins through only if they have not scoped their user via `lastLoggedInTenant`
-    if (isSuper) {
+    if (isSuper && !user?.lastLoggedInTenant) {
       return true
     }
 

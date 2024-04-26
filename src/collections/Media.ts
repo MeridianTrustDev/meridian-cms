@@ -1,6 +1,5 @@
 import { CollectionConfig } from 'payload/types'
 import { tenant } from '@/fields/tenant'
-import { tenants } from './access/tenants'
 
 export const Media: CollectionConfig = {
   slug: 'media',
