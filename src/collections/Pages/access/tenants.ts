@@ -7,13 +7,8 @@ export const tenants: Access = ({ req, data }) => {
     console.log('batty')
     return (
       // individual documents
-<<<<<<< HEAD
-      (data?.tenant?.id && req.user.tenants.includes(data.tenant.id)) ||
-      isSuperAdmin(req.user) || {
-=======
       (data?.tenant?.id && req.user?.lastLoggedInTenant?.id === data.tenant.id) ||
       (!req.user?.lastLoggedInTenant?.id && isSuperAdmin(req.user)) || {
->>>>>>> parent of c4c52b8 (1)
         // list of documents
         tenant: isSuperAdmin(req.user)
           ? {

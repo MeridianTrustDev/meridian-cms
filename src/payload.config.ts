@@ -48,23 +48,6 @@ export default buildConfig({
         Icon,
       },
     },
-<<<<<<< HEAD
-    // livePreview: {
-    //   url(args) {
-    //     console.log(args)
-    //     return `${args.data}`
-    //   },
-    //   breakpoints: [
-    //     {
-    //       label: 'Mobile',
-    //       name: 'mobile',
-    //       width: 375,
-    //       height: 667,
-    //     },
-    //   ],
-    // },
-=======
->>>>>>> parent of c4c52b8 (1)
   },
   indexSortableFields: true,
   collections: [Events, Headers, Footers, Navigation, Users, Tenants, Pages, Media],

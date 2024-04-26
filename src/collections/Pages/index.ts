@@ -18,21 +18,6 @@ export const Pages: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'tenant', 'updatedAt'],
-<<<<<<< HEAD
-    // livePreview: {
-    //   url: async ({ data, payload }) => {
-    //     const tenant = await payload.findByID({
-    //       collection: 'tenants',
-    //       id: data.tenant,
-    //     })
-    //     console.log(
-    //       `${tenant.domains?.frontendDomain}${data.slug !== 'home' ? `/${data.slug}` : ''}`,
-    //     )
-    //     return `${tenant.domains?.frontendDomain}${data.slug !== 'home' ? `/${data.slug}` : ''}`
-    //   },
-    // },
-=======
->>>>>>> parent of c4c52b8 (1)
   },
   versions: {
     drafts: true,

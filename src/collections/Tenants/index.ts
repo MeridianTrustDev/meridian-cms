@@ -25,22 +25,5 @@ export const Tenants: CollectionConfig = {
       type: 'text',
       index: true,
     },
-    // {
-    //   type: 'group',
-    //   name: 'domains',
-    //   fields: [
-    //     {
-    //       name: 'cmsDomain',
-    //       label: 'CMS Domain',
-    //       type: 'text',
-    //       index: true,
-    //     },
-    //     {
-    //       name: 'frontendDomain',
-    //       type: 'text',
-    //       index: true,
-    //     },
-    //   ],
-    // },
   ],
 }

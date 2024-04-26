@@ -20,28 +20,41 @@ export const adminsAndSelf: Access = ({ req: { user } }) => {
             equals: user.id,
           },
         },
-
-        {
-          'tenants.tenant': {
-            in:
-              user?.tenants
-                ?.map(
-                  ({
-                    tenant,
-                    roles,
-                  }: {
-                    tenant: NonNullable<User['tenants']>[0]['tenant']
-                    roles: NonNullable<User['tenants']>[0]['roles']
-                  }) =>
-                    roles.includes('admin')
-                      ? typeof tenant === 'string'
-                        ? tenant
-                        : tenant.id
-                      : null,
-                )
-                .filter(Boolean) || [],
-          },
-        },
+        ...(isSuper
+          ? [
+              {
+                'tenants.tenant': {
+                  in: [
+                    typeof user?.lastLoggedInTenant === 'string'
+                      ? user?.lastLoggedInTenant
+                      : user?.lastLoggedInTenant?.id,
+                  ].filter(Boolean),
+                },
+              },
+            ]
+          : [
+              {
+                'tenants.tenant': {
+                  in:
+                    user?.tenants
+                      ?.map(
+                        ({
+                          tenant,
+                          roles,
+                        }: {
+                          tenant: NonNullable<User['tenants']>[0]['tenant']
+                          roles: NonNullable<User['tenants']>[0]['roles']
+                        }) =>
+                          roles.includes('admin')
+                            ? typeof tenant === 'string'
+                              ? tenant
+                              : tenant.id
+                            : null,
+                      )
+                      .filter(Boolean) || [],
+                },
+              },
+            ]),
       ],
     }
   }
