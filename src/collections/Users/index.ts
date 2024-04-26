@@ -10,9 +10,9 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   access: {
-    read: adminsAndSelf,
-    update: adminsAndSelf,
-    delete: adminsAndSelf,
+    read: () => true,
+    update: () => true,
+    delete: () => true,
     admin: () => true,
   },
   fields: [
