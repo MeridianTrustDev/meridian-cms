@@ -3,6 +3,7 @@ import { tenant } from '../../fields/tenant'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
 import { tenants } from './access/tenants'
+import { revalidate } from './hooks/revalidate'
 
 export const Headers: CollectionConfig = {
   slug: 'headers',
@@ -12,7 +13,9 @@ export const Headers: CollectionConfig = {
     update: tenantAdmins,
     delete: tenantAdmins,
   },
-
+  hooks: {
+    afterChange: [revalidate],
+  },
   fields: [
     {
       name: 'title',
