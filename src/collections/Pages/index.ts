@@ -12,6 +12,7 @@ import { Events } from '@/blocks/Events'
 import { File } from '@/blocks/File'
 import { MediaAndText } from '@/blocks/MediaAndText'
 import { Vacancies } from '@/blocks/Vacancies'
+import { revalidatePage } from './hooks/revalidatePage'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -22,6 +23,9 @@ export const Pages: CollectionConfig = {
   versions: {
     drafts: true,
     maxPerDoc: 5,
+  },
+  hooks: {
+    afterChange: [revalidatePage],
   },
   access: {
     read: tenants,
