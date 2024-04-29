@@ -9,7 +9,7 @@ export const revalidatePath = async (args: {
 
   try {
     const res = await fetch(
-      `${domain}/revalidate?secret=${process.env.REVALIDATION_KEY}&path=${path}`,
+      `https://${domain}/revalidate?secret=${process.env.REVALIDATION_KEY}&path=${path}`,
     )
 
     if (res.ok) {
