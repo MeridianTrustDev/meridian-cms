@@ -29,11 +29,13 @@ export const Tenants: CollectionConfig = {
           label: 'CMS Domain',
           type: 'text',
           index: true,
+          required: true,
         },
         {
           name: 'frontendDomain',
           type: 'text',
           index: true,
+          required: true,
         },
       ],
     },
