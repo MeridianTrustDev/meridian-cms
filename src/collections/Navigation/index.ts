@@ -26,6 +26,7 @@ export const Navigation: CollectionConfig = {
     {
       name: 'type',
       type: 'select',
+      required: true,
       options: [
         {
           label: 'Primary',
