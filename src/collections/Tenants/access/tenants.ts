@@ -27,6 +27,8 @@ export const tenants: Access = ({ req: { user, host }, data }) => {
     )
   }
 
+  console.log(host)
+
   // // If user is not logged in, only show documents that belong to the tenant that matches the current domain
   return (
     (data?.domains && data.domains.cmsDomain === host) || {
