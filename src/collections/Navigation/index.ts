@@ -4,6 +4,7 @@ import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'
 import { ArrayRowLabel } from '@/components/RowLabel'
 import { tenants } from './access/tenants'
+import { revalidate } from './hooks/revalidate'
 
 export const Navigation: CollectionConfig = {
   slug: 'navigationMenu',
@@ -12,6 +13,9 @@ export const Navigation: CollectionConfig = {
     create: loggedIn,
     update: tenantAdmins,
     delete: tenantAdmins,
+  },
+  hooks: {
+    afterChange: [revalidate],
   },
   admin: {
     useAsTitle: 'title',
