@@ -13,6 +13,7 @@ import { File } from '@/blocks/File'
 import { MediaAndText } from '@/blocks/MediaAndText'
 import { Vacancies } from '@/blocks/Vacancies'
 import { revalidatePage } from './hooks/revalidatePage'
+import { Accordion } from '@/blocks/Accordion'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -55,6 +56,7 @@ export const Pages: CollectionConfig = {
             {
               name: 'type',
               type: 'select',
+              defaultValue: 'page',
               options: [
                 {
                   label: 'Page',
@@ -117,7 +119,17 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [Buttons, Columns, Events, MediaBlock, MediaAndText, Text, File, Vacancies],
+              blocks: [
+                Accordion,
+                Buttons,
+                Columns,
+                Events,
+                MediaBlock,
+                MediaAndText,
+                Text,
+                File,
+                Vacancies,
+              ],
             },
           ],
         },
