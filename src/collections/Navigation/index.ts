@@ -119,7 +119,7 @@ export const Navigation: CollectionConfig = {
           type: 'relationship',
           relationTo: 'pages',
           required: true,
-          maxDepth: 1,
+          maxDepth: 2,
           admin: {
             condition: (_, siblingData) => siblingData?.type === 'reference',
           },
@@ -199,19 +199,11 @@ export const Navigation: CollectionConfig = {
             },
             {
               name: 'reference',
-              label: 'Internal Link',
+              label: 'Page',
               type: 'relationship',
               relationTo: 'pages',
               required: true,
-              maxDepth: 5,
-              filterOptions: ({ data }) => {
-                return {
-                  tenant: {
-                    equals: data?.tenant,
-                  },
-                }
-              },
-
+              maxDepth: 2,
               admin: {
                 condition: (_, siblingData) => siblingData?.type === 'reference',
               },
@@ -281,11 +273,11 @@ export const Navigation: CollectionConfig = {
                 },
                 {
                   name: 'reference',
-                  label: 'Internal Link',
+                  label: 'Page',
                   type: 'relationship',
                   relationTo: 'pages',
                   required: true,
-                  maxDepth: 1,
+                  maxDepth: 2,
                   admin: {
                     condition: (_, siblingData) => siblingData?.type === 'reference',
                   },
