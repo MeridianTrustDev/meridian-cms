@@ -223,9 +223,7 @@ export const Navigation: CollectionConfig = {
               type: 'array',
               admin: {
                 components: {
-                  RowLabel: ({ data, index }) => {
-                    return data?.label || `Nav Item ${index + 1}`
-                  },
+                  RowLabel: ArrayRowLabel,
                 },
                 condition: (_, siblingData) => siblingData?.type === 'parent',
               },
