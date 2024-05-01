@@ -25,6 +25,7 @@ import type {} from '@payloadcms/plugin-seo'
 import { Events } from './collections/Events'
 import { Footers } from './collections/Footers'
 import { News } from './collections/News'
+import { Categories } from './collections/Categories'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -51,7 +52,18 @@ export default buildConfig({
     },
   },
   indexSortableFields: true,
-  collections: [Events, Headers, Footers, Navigation, News, Users, Tenants, Pages, Media],
+  collections: [
+    Categories,
+    Events,
+    Footers,
+    Media,
+    Headers,
+    Navigation,
+    News,
+    Pages,
+    Tenants,
+    Users,
+  ],
   upload: {
     limits: {
       fileSize: 5000000,

@@ -24,6 +24,21 @@ export const File: Block = {
             },
           ],
         },
+        {
+          name: 'categories',
+          type: 'array',
+          admin: {
+            condition: (_, siblingData) => siblingData.mode === 'byCategory',
+          },
+          fields: [
+            {
+              name: 'category',
+              type: 'relationship',
+              relationTo: 'categories',
+              required: true,
+            },
+          ],
+        },
       ],
     },
     {
@@ -36,11 +51,6 @@ export const File: Block = {
         },
       },
       fields: [
-        {
-          name: 'name',
-          type: 'text',
-          required: false,
-        },
         {
           name: 'embed',
           type: 'checkbox',

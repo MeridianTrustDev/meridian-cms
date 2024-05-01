@@ -14,6 +14,7 @@ import { MediaAndText } from '@/blocks/MediaAndText'
 import { Vacancies } from '@/blocks/Vacancies'
 import { revalidatePage } from './hooks/revalidatePage'
 import { Accordion } from '@/blocks/Accordion'
+import { News } from '@/blocks/News'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -126,6 +127,7 @@ export const Pages: CollectionConfig = {
                 Events,
                 MediaBlock,
                 MediaAndText,
+                News,
                 Text,
                 File,
                 Vacancies,
