@@ -22,7 +22,9 @@ export const Media: CollectionConfig = {
     {
       name: 'categories',
       type: 'array',
-      fields: [{ type: 'text', name: 'category' }],
+      fields: [
+        { type: 'relationship', name: 'category', relationTo: 'categories', required: true },
+      ],
     },
     tenant,
   ],

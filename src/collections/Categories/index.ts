@@ -13,11 +13,12 @@ export const Categories: CollectionConfig = {
     delete: tenantAdmins,
   },
   admin: {
-    defaultColumns: ['title', 'tenant'],
+    defaultColumns: ['name', 'tenant'],
+    useAsTitle: 'name',
   },
   fields: [
     {
-      name: 'category',
+      name: 'name',
       label: 'Category Name',
       type: 'text',
       required: true,

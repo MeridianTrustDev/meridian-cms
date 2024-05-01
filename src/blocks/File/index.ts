@@ -24,21 +24,6 @@ export const File: Block = {
             },
           ],
         },
-        {
-          name: 'categories',
-          type: 'array',
-          admin: {
-            condition: (_, siblingData) => siblingData.mode === 'byCategory',
-          },
-          fields: [
-            {
-              name: 'category',
-              type: 'relationship',
-              relationTo: 'categories',
-              required: true,
-            },
-          ],
-        },
       ],
     },
     {
@@ -64,8 +49,31 @@ export const File: Block = {
           relationTo: 'media',
           required: true,
           maxDepth: 1,
+          filterOptions: ({ data }) => {
+            return {
+              tenant: {
+                equals: data?.tenant,
+              },
+            }
+          },
         },
       ],
+    },
+    {
+      name: 'category',
+      type: 'relationship',
+      relationTo: 'categories',
+      required: true,
+      admin: {
+        condition: (_, siblingData) => siblingData.mode === 'byCategory',
+      },
+      filterOptions: ({ data }) => {
+        return {
+          tenant: {
+            equals: data?.tenant,
+          },
+        }
+      },
     },
   ],
 }

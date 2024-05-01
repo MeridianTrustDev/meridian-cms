@@ -78,6 +78,13 @@ export const Buttons: Block = {
           admin: {
             condition: (_, siblingData) => siblingData?.target === 'reference',
           },
+          filterOptions: ({ data }) => {
+            return {
+              tenant: {
+                equals: data?.tenant,
+              },
+            }
+          },
         },
         {
           name: 'url',
