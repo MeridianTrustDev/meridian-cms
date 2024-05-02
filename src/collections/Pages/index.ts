@@ -15,6 +15,7 @@ import { Vacancies } from '@/blocks/Vacancies'
 import { revalidatePage } from './hooks/revalidatePage'
 import { Accordion } from '@/blocks/Accordion'
 import { News } from '@/blocks/News'
+import { Embed } from '@/blocks/Embed'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -124,6 +125,7 @@ export const Pages: CollectionConfig = {
                 Accordion,
                 Buttons,
                 Columns,
+                Embed,
                 Events,
                 MediaBlock,
                 MediaAndText,
