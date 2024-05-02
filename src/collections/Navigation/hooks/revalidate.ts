@@ -17,7 +17,7 @@ export const revalidate: CollectionAfterChangeHook = async ({ doc, req: { payloa
     throw new Error('Tenant not found, cannot revalidate')
   }
 
-  revalidateTag({ tag: 'navigation', payload, domain: tenant.domains.frontendDomain })
+  revalidatePath({ path: '/', payload, domain: tenant.domains.frontendDomain })
 
   return doc
 }
