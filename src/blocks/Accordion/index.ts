@@ -3,6 +3,7 @@ import { MediaBlock } from '../MediaBlock'
 import { Text } from '../Content'
 import { ArrayRowLabel } from './RowLabel'
 import { MediaAndText } from '../MediaAndText'
+import { Embed } from '../Embed'
 
 export const Accordion: Block = {
   slug: 'accordion',
@@ -25,7 +26,7 @@ export const Accordion: Block = {
           name: 'content',
           type: 'blocks',
           required: true,
-          blocks: [Text, MediaBlock, MediaAndText],
+          blocks: [Embed, Text, MediaBlock, MediaAndText],
         },
       ],
     },
