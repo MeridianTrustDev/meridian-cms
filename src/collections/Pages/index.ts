@@ -94,6 +94,10 @@ export const Pages: CollectionConfig = {
               },
               fields: [
                 {
+                  name: 'showHousePoints',
+                  type: 'checkbox',
+                },
+                {
                   name: 'slides',
                   type: 'array',
                   fields: [

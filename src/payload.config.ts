@@ -26,6 +26,7 @@ import { Events } from './collections/Events'
 import { Footers } from './collections/Footers'
 import { News } from './collections/News'
 import { Categories } from './collections/Categories'
+import { Houses } from './collections/Houses'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -56,6 +57,7 @@ export default buildConfig({
     Categories,
     Events,
     Footers,
+    Houses,
     Media,
     Headers,
     Navigation,
