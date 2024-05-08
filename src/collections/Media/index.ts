@@ -10,12 +10,8 @@ export const Media: CollectionConfig = {
   },
   fields: [
     {
-      name: 'name',
-      label: 'Friendly Name',
-      type: 'text',
-    },
-    {
       name: 'alt',
+      label: 'Friendly Name of Document / Description of Image',
       type: 'text',
       required: true,
     },
