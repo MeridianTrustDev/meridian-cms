@@ -4,6 +4,7 @@ import { Text } from '../Content'
 import { ArrayRowLabel } from './RowLabel'
 import { MediaAndText } from '../MediaAndText'
 import { Embed } from '../Embed'
+import { File } from '../File'
 
 export const Accordion: Block = {
   slug: 'accordion',
@@ -15,6 +16,7 @@ export const Accordion: Block = {
         components: {
           RowLabel: ArrayRowLabel,
         },
+        initCollapsed: true,
       },
       fields: [
         {
@@ -26,7 +28,7 @@ export const Accordion: Block = {
           name: 'content',
           type: 'blocks',
           required: true,
-          blocks: [Embed, Text, MediaBlock, MediaAndText],
+          blocks: [Embed, File, Text, MediaBlock, MediaAndText],
         },
       ],
     },

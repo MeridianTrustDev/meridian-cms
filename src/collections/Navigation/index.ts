@@ -57,6 +57,7 @@ export const Navigation: CollectionConfig = {
         components: {
           RowLabel: ArrayRowLabel,
         },
+        initCollapsed: true,
       },
       fields: [
         {
@@ -114,6 +115,14 @@ export const Navigation: CollectionConfig = {
           },
         },
         {
+          name: 'disableLink',
+          label: 'Disable Link',
+          type: 'checkbox',
+          admin: {
+            condition: (_, siblingData) => siblingData?.type === 'reference',
+          },
+        },
+        {
           name: 'reference',
           label: 'Page',
           type: 'relationship',
@@ -142,6 +151,14 @@ export const Navigation: CollectionConfig = {
           },
         },
         {
+          name: 'color',
+          label: 'Color',
+          type: 'text',
+          admin: {
+            condition: (_) => _.type === 'secondary',
+          },
+        },
+        {
           name: 'children',
           label: 'Children',
           type: 'array',
@@ -149,6 +166,7 @@ export const Navigation: CollectionConfig = {
             components: {
               RowLabel: ArrayRowLabel,
             },
+            initCollapsed: true,
           },
           fields: [
             {
@@ -225,6 +243,7 @@ export const Navigation: CollectionConfig = {
                   RowLabel: ArrayRowLabel,
                 },
                 condition: (_, siblingData) => siblingData?.type === 'parent',
+                initCollapsed: true,
               },
               fields: [
                 {

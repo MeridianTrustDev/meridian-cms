@@ -49,6 +49,9 @@ export const Users: CollectionConfig = {
       name: 'tenants',
       type: 'array',
       label: 'Tenants',
+      admin: {
+        initCollapsed: true,
+      },
       access: {
         create: tenantAdmins,
         update: tenantAdmins,

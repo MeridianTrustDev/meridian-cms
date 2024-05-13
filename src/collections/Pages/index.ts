@@ -16,6 +16,7 @@ import { revalidatePage } from './hooks/revalidatePage'
 import { Accordion } from '@/blocks/Accordion'
 import { News } from '@/blocks/News'
 import { Embed } from '@/blocks/Embed'
+import { Tiles } from '@/blocks/Tiles'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -100,6 +101,9 @@ export const Pages: CollectionConfig = {
                 {
                   name: 'slides',
                   type: 'array',
+                  admin: {
+                    initCollapsed: true,
+                  },
                   fields: [
                     {
                       name: 'image',
@@ -136,6 +140,7 @@ export const Pages: CollectionConfig = {
                 MediaAndText,
                 News,
                 Text,
+                Tiles,
                 Vacancies,
               ],
             },

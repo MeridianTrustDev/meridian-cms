@@ -13,6 +13,7 @@ export const Buttons: Block = {
         components: {
           RowLabel: ArrayRowLabel,
         },
+        initCollapsed: true,
       },
       fields: [
         {

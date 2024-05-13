@@ -18,6 +18,9 @@ export const Media: CollectionConfig = {
     {
       name: 'categories',
       type: 'array',
+      admin: {
+        initCollapsed: true,
+      },
       fields: [
         { type: 'relationship', name: 'category', relationTo: 'categories', required: true },
       ],

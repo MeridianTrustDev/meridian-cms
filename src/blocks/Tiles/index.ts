@@ -3,11 +3,12 @@ import { MediaBlock } from '../MediaBlock'
 import { Text } from '../Content'
 import { ArrayRowLabel } from './RowLabel'
 
-export const Buttons: Block = {
-  slug: 'buttonsBlock',
+export const Tiles: Block = {
+  slug: 'tiles',
   fields: [
     {
-      name: 'buttons',
+      name: 'tiles',
+      label: 'Tiles',
       type: 'array',
       admin: {
         components: {
@@ -22,16 +23,12 @@ export const Buttons: Block = {
           required: false,
         },
         {
-          name: 'backgroundColour',
+          name: 'colour',
           type: 'text',
         },
         {
-          name: 'backgroundImage',
-          type: 'upload',
-          relationTo: 'media',
-          filterOptions: {
-            mimeType: { contains: 'image' },
-          },
+          name: 'icon',
+          type: 'text',
         },
         {
           type: 'row',

@@ -11,6 +11,9 @@ export const Columns: Block = {
       name: 'columns',
       label: 'Columns',
       type: 'array',
+      admin: {
+        initCollapsed: true,
+      },
       fields: [
         {
           name: 'content',
