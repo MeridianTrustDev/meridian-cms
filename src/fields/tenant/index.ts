@@ -1,6 +1,7 @@
 import type { Field } from 'payload/types'
 import { isSuperAdmin } from '../../utilities/isSuperAdmin'
 import { superAdminFieldAccess } from '../../access/superAdmins'
+import { tenantUserFieldAccess } from './access/tenantUsers'
 
 export const tenant: Field = {
   name: 'tenant',
@@ -11,8 +12,8 @@ export const tenant: Field = {
     position: 'sidebar',
   },
   access: {
-    create: superAdminFieldAccess,
+    create: tenantUserFieldAccess,
     read: () => true,
-    update: superAdminFieldAccess,
+    update: tenantUserFieldAccess,
   },
 }

@@ -3,6 +3,8 @@ import { MediaBlock } from '../MediaBlock'
 import { Text } from '../Content'
 import { Events } from '../Events'
 import { News } from '../News'
+import { File } from '../File'
+import { MediaAndText } from '../MediaAndText'
 
 export const Columns: Block = {
   slug: 'columnsBlock',
@@ -19,7 +21,7 @@ export const Columns: Block = {
           name: 'content',
           type: 'blocks',
           required: true,
-          blocks: [Events, MediaBlock, News, Text],
+          blocks: [Events, File, MediaBlock, MediaAndText, News, Text],
         },
       ],
     },
