@@ -11,6 +11,20 @@ export const tenant: Field = {
   admin: {
     position: 'sidebar',
   },
+  required: true,
+  hooks: {
+    beforeChange: [
+      ({ req: { user }, value }) => {
+        console.log(user?.tenants)
+
+        if (user?.tenants?.length === 1) {
+          return typeof user?.tenants[0]?.tenant === 'string'
+            ? user?.tenants[0]?.tenant
+            : user?.tenants[0]?.tenant?.id
+        }
+      },
+    ],
+  },
   access: {
     create: tenantUserFieldAccess,
     read: () => true,
