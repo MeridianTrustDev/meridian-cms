@@ -1,6 +1,7 @@
 import type { CollectionAfterChangeHook } from 'payload/types'
 
 import { revalidatePath } from '../../../utilities/revalidatePath'
+import { revalidateTag } from '@/utilities/revalidateTag'
 
 // Revalidate the page in the background, so the user doesn't have to wait
 // Notice that the hook itself is not async and we are not awaiting `revalidate`
@@ -18,6 +19,7 @@ export const revalidatePage: CollectionAfterChangeHook = async ({ doc, req: { pa
 
   if (doc._status === 'published') {
     revalidatePath({ path: doc.slug, payload, domain: tenant.domains.frontendDomain })
+    revalidateTag({ tag: 'sitemap', payload, domain: tenant.domains.frontendDomain })
   }
 
   return doc
