@@ -242,7 +242,6 @@ export const Navigation: CollectionConfig = {
                 components: {
                   RowLabel: ArrayRowLabel,
                 },
-                condition: (_, siblingData) => siblingData?.type === 'parent',
                 initCollapsed: true,
               },
               fields: [
