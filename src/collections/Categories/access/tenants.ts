@@ -6,7 +6,7 @@ export const tenants: Access = ({ req, data }) => {
   if (req.user) {
     return (
       // individual documents
-      (data?.tenant?.id && req.user.tenants?.includes(data.tenant.id)) ||
+      (data?.tenant?.id && req.user.tenants.includes(data.tenant.id)) ||
       isSuperAdmin(req.user) || {
         // list of documents
         tenant: isSuperAdmin(req.user)
@@ -14,7 +14,15 @@ export const tenants: Access = ({ req, data }) => {
               exists: true,
             }
           : {
-              in: req.user?.tenants?.map(({ tenant }) => tenant.id),
+              in: req.user?.tenants?.map(
+                ({
+                  tenant,
+                }: {
+                  tenant: {
+                    id: string
+                  }
+                }) => tenant.id,
+              ),
             },
       }
     )
