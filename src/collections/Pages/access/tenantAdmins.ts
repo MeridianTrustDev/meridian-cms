@@ -3,7 +3,7 @@ import { checkUserRoles } from '../../../utilities/checkUserRoles'
 import { User } from '@/payload-types'
 
 export const tenantAdmins: Access = ({ req: { user } }) => {
-  if (checkUserRoles(['super-admin'], user)) {
+  if (checkUserRoles(['super-admin'], user as User)) {
     return true
   }
 
