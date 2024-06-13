@@ -3,10 +3,10 @@ import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 
 export const tenants: Access = ({ req, data }) => {
   // If user is logged in, only show documents that belong to the tenants they have access to
-  if (req.user) {
+  if (req.user && req.user.tenants) {
     return (
       // individual documents
-      (data?.tenant?.id && req.user.tenants(data.tenant.id)) ||
+      (data?.tenant?.id && req.user.tenants) ||
       isSuperAdmin(req.user) || {
         // list of documents
         tenant: isSuperAdmin(req.user)
@@ -14,14 +14,9 @@ export const tenants: Access = ({ req, data }) => {
               exists: true,
             }
           : {
-              in: req.user?.tenants?.map(
-                ({
-                  tenant,
-                }: {
-                  tenant: {
-                    id: string
-                  }
-                }) => tenant.id,
+              in: req.user?.tenants.map(
+                // @ts-ignore
+                ({ tenant }) => tenant.id,
               ),
             },
       }

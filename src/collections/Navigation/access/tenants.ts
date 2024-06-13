@@ -6,7 +6,7 @@ export const tenants: Access = ({ req, data }) => {
   if (req.user) {
     return (
       // individual documents
-      (data?.tenant?.id && req.user.tenants.includes(data.tenant.id)) ||
+      (data?.tenant?.id && req.user.tenants) ||
       isSuperAdmin(req.user) || {
         // list of documents
         tenant: isSuperAdmin(req.user)
@@ -15,13 +15,8 @@ export const tenants: Access = ({ req, data }) => {
             }
           : {
               in: req.user?.tenants?.map(
-                ({
-                  tenant,
-                }: {
-                  tenant: {
-                    id: string
-                  }
-                }) => tenant.id,
+                // @ts-ignore
+                ({ tenant }) => tenant.id,
               ),
             },
       }
@@ -30,7 +25,7 @@ export const tenants: Access = ({ req, data }) => {
 
   // If user is not logged in, only show documents that belong to the tenant that matches the current domain
   return (
-    (data?.tenant?.id && data.tenant.domain.cmsDomain === req.host) || {
+    (data?.tenant?.domains.cmsDomain && data.tenant.domains.cmsDomain === req.host) || {
       // list of documents
       'tenant.domains.cmsDomain': {
         equals: req.host,

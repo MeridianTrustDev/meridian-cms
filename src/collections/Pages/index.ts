@@ -17,7 +17,6 @@ import { Accordion } from '@/blocks/Accordion'
 import { News } from '@/blocks/News'
 import { Embed } from '@/blocks/Embed'
 import { Tiles } from '@/blocks/Tiles'
-import { tableField } from 'payload-table-field'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
