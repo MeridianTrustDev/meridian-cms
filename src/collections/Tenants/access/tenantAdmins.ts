@@ -3,7 +3,7 @@ import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 import { User } from '@/payload-types'
 
 export const tenantAdmins: Access = ({ req: { user } }) => {
-  if (isSuperAdmin(user)) {
+  if (isSuperAdmin(user as User)) {
     return true
   }
 
