@@ -86,11 +86,11 @@ export default buildConfig({
     },
     transactionOptions: false,
   }),
+
   plugins: [
     azureStorage({
       collections: {
-        media: true,
-        pages: true,
+        Media: true,
       },
       allowContainerCreate: true,
       baseURL: process.env.AZURE_STORAGE_BASE_URL!,
