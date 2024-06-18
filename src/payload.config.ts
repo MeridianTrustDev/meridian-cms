@@ -7,9 +7,6 @@ import {
   BoldFeature,
   ItalicFeature,
   LinkFeature,
-  HeadingFeature,
-  FixedToolbarFeature,
-  InlineToolbarFeature,
 } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload/config'
@@ -74,16 +71,8 @@ export default buildConfig({
     },
   },
   editor: lexicalEditor({
-    features: ({ rootFeatures, defaultFeatures }) => {
-      return [
-        ...rootFeatures,
-        ...defaultFeatures,
-        HeadingFeature({
-          enabledHeadingSizes: ['h1', 'h2', 'h3'],
-        }),
-        FixedToolbarFeature(),
-        InlineToolbarFeature(),
-      ]
+    features: () => {
+      return [UnderlineFeature(), BoldFeature(), ItalicFeature()]
     },
   }),
   secret: process.env.PAYLOAD_SECRET || '',
