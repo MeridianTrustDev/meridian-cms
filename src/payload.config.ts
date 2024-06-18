@@ -1,21 +1,15 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 // import { payloadCloud } from '@payloadcms/plugin-cloud'
-import {
-  lexicalEditor,
-  HTMLConverterFeature,
-  UnderlineFeature,
-  BoldFeature,
-  ItalicFeature,
-  LinkFeature,
-} from '@payloadcms/richtext-lexical'
+import { lexicalEditor, HTMLConverterFeature } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload/config'
 // import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
 import { Users } from './collections/Users'
-import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
-import { azureStorage } from '@payloadcms/storage-azure'
+import { cloudStorage } from '@payloadcms/plugin-cloud-storage'
+import { azureBlobStorageAdapter } from '@payloadcms/plugin-cloud-storage/azure'
+import { nestedDocs } from '@payloadcms/plugin-nested-docs'
 
 import Logo from './components/graphics/Logo'
 import Icon from './components/graphics/Icon'
@@ -26,7 +20,7 @@ import { Media } from './collections/Media'
 import { Headers } from './collections/Headers'
 import { Navigation } from './collections/Navigation'
 
-import { seoPlugin } from '@payloadcms/plugin-seo'
+import { seo } from '@payloadcms/plugin-seo'
 import type {} from '@payloadcms/plugin-seo'
 import { Events } from './collections/Events'
 import { Footers } from './collections/Footers'
@@ -40,6 +34,13 @@ const dirname = path.dirname(filename)
 const generateTitle = () => {
   return 'Stratton School'
 }
+
+const adapter = azureBlobStorageAdapter({
+  connectionString: process.env.AZURE_STORAGE_CONNECTION_STRING!,
+  containerName: process.env.AZURE_STORAGE_CONTAINER_NAME!,
+  allowContainerCreate: true,
+  baseURL: process.env.AZURE_STORAGE_BASE_URL!,
+})
 
 export default buildConfig({
   admin: {
@@ -70,11 +71,7 @@ export default buildConfig({
       fileSize: 5000000,
     },
   },
-  editor: lexicalEditor({
-    features: () => {
-      return [UnderlineFeature(), BoldFeature(), ItalicFeature()]
-    },
-  }),
+  editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -88,21 +85,20 @@ export default buildConfig({
   }),
 
   plugins: [
-    azureStorage({
+    cloudStorage({
       collections: {
-        Media: true,
+        media: {
+          adapter: adapter,
+          disableLocalStorage: true,
+        },
       },
-      allowContainerCreate: true,
-      baseURL: process.env.AZURE_STORAGE_BASE_URL!,
-      connectionString: process.env.AZURE_STORAGE_CONNECTION_STRING!,
-      containerName: process.env.AZURE_STORAGE_CONTAINER_NAME!,
     }),
-    seoPlugin({
+    seo({
       collections: ['pages'],
       generateTitle,
       uploadsCollection: 'media',
     }),
-    nestedDocsPlugin({
+    nestedDocs({
       collections: ['pages'],
       generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
       generateLabel: (doc, currentDoc) => currentDoc.title as string,
