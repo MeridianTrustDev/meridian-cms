@@ -19,7 +19,7 @@ export const revalidatePage: CollectionAfterChangeHook = async ({ doc, req: { pa
 
   if (doc._status === 'published') {
     revalidatePath({ path: doc.slug, payload, domain: tenant.domains.frontendDomain })
-    revalidateTag({ tag: 'sitemap', payload, domain: tenant.domains.frontendDomain })
+    // revalidateTag({ tag: 'sitemap', payload, domain: tenant.domains.frontendDomain })
   }
 
   return doc
