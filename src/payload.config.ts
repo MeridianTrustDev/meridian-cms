@@ -89,7 +89,7 @@ export default buildConfig({
       collections: {
         media: {
           adapter: adapter,
-          disableLocalStorage: true,
+          generateFileURL: (file) => `${process.env.AZURE_STORAGE_BASE_URL}/media/${file.filename}`,
         },
       },
     }),

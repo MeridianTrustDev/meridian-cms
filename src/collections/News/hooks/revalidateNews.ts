@@ -8,7 +8,7 @@ import { revalidateTag } from '@/utilities/revalidateTag'
 // Only revalidate existing docs that are published
 // Don't scope to `operation` in order to purge static demo pages
 export const revalidateNews: CollectionAfterChangeHook = async ({ doc, req: { payload } }) => {
-  const tenant = await payload.findByID({
+  const tenant: any = await payload.findByID({
     collection: 'tenants',
     id: doc.tenant,
   })
