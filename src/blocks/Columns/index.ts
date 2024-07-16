@@ -1,4 +1,4 @@
-import { Block, Field } from 'payload/types'
+import { Block, Field } from 'payload'
 import { MediaBlock } from '../MediaBlock'
 import { Text } from '../Content'
 import { Events } from '../Events'

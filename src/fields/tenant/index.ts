@@ -1,4 +1,4 @@
-import type { Field } from 'payload/types'
+import type { Field } from 'payload'
 import { isSuperAdmin } from '../../utilities/isSuperAdmin'
 import { superAdminFieldAccess } from '../../access/superAdmins'
 import { tenantUserFieldAccess } from './access/tenantUsers'

@@ -1,4 +1,4 @@
-import { Block, Field } from 'payload/types'
+import { Block, Field } from 'payload'
 export const Events: Block = {
   slug: 'eventsBlock',
   fields: [

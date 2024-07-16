@@ -1,7 +1,6 @@
-import type { CollectionAfterChangeHook } from 'payload/types'
+import type { CollectionAfterChangeHook } from 'payload'
 
 import { revalidatePath } from '../../../utilities/revalidatePath'
-import { revalidateTag } from '@/utilities/revalidateTag'
 
 // Revalidate the page in the background, so the user doesn't have to wait
 // Notice that the hook itself is not async and we are not awaiting `revalidate`

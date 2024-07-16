@@ -1,4 +1,4 @@
-import { CollectionBeforeReadHook, CollectionConfig } from 'payload/types'
+import { CollectionBeforeReadHook, CollectionConfig } from 'payload'
 import { tenants } from './access/tenants'
 import { loggedIn } from './access/loggedIn'
 import { tenantAdmins } from './access/tenantAdmins'
@@ -17,17 +17,12 @@ import { Accordion } from '@/blocks/Accordion'
 import { News } from '@/blocks/News'
 import { Embed } from '@/blocks/Embed'
 import { Tiles } from '@/blocks/Tiles'
-import { tableField } from 'payload-table-field'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'tenant', 'updatedAt'],
-  },
-  versions: {
-    drafts: true,
-    maxPerDoc: 5,
   },
   hooks: {
     afterChange: [revalidatePage],

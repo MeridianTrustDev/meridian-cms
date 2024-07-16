@@ -1,4 +1,4 @@
-import type { CollectionAfterChangeHook } from 'payload/types'
+import type { CollectionAfterChangeHook } from 'payload'
 
 import { revalidatePath } from '../../../utilities/revalidatePath'
 import { revalidateTag } from '@/utilities/revalidateTag'

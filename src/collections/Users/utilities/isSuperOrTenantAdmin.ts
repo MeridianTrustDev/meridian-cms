@@ -1,4 +1,4 @@
-import type { PayloadRequest } from 'payload/types'
+import type { PayloadRequest } from 'payload'
 import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
 import { Tenant, User } from '@/payload-types'
 

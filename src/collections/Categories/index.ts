@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from 'payload'
 import { tenant } from '../../fields/tenant'
 import { loggedIn } from '../Pages/access/loggedIn'
 import { tenantAdmins } from '../Pages/access/tenantAdmins'

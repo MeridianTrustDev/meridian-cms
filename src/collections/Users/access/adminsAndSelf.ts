@@ -1,6 +1,6 @@
 import { User } from '@/payload-types'
 import { isSuperAdmin } from '../../../utilities/isSuperAdmin'
-import type { Access } from 'payload/config'
+import type { Access } from 'payload'
 
 // @ts-expect-error i hate this
 export const adminsAndSelf: Access = ({ req: { user } }) => {

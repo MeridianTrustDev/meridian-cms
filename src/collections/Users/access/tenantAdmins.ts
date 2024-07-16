@@ -1,4 +1,4 @@
-import { FieldAccess } from 'payload/types'
+import { FieldAccess } from 'payload'
 import { checkUserRoles } from '../../../utilities/checkUserRoles'
 import { checkTenantRoles } from '../utilities/checkTenantRoles'
 import { Tenant, User } from '@/payload-types'

@@ -1,4 +1,4 @@
-import type { Access } from 'payload/types'
+import type { Access } from 'payload'
 import { checkUserRoles } from '../../../utilities/checkUserRoles'
 import { User } from '@/payload-types'
 

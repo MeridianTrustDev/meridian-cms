@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from 'payload'
 import { tenant } from '@/fields/tenant'
 import { tenants } from './access/tenants'
 

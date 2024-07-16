@@ -1,4 +1,4 @@
-import { CollectionConfig, FieldHookArgs } from 'payload/types'
+import { CollectionConfig, FieldHookArgs } from 'payload'
 import { superAdminFieldAccess } from '../../access/superAdmins'
 import { tenantAdmins } from './access/tenantAdmins'
 import { adminsAndSelf } from './access/adminsAndSelf'
