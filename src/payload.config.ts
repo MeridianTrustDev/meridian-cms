@@ -5,11 +5,8 @@ import path from 'path'
 import { buildConfig } from 'payload/config'
 // import sharp from 'sharp'
 import { fileURLToPath } from 'url'
-
+import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { Users } from './collections/Users'
-import { cloudStorage } from '@payloadcms/plugin-cloud-storage'
-import { azureBlobStorageAdapter } from '@payloadcms/plugin-cloud-storage/azure'
-import { nestedDocs } from '@payloadcms/plugin-nested-docs'
 
 import Logo from './components/graphics/Logo'
 import Icon from './components/graphics/Icon'
@@ -19,8 +16,9 @@ import { Pages } from './collections/Pages'
 import { Media } from './collections/Media'
 import { Headers } from './collections/Headers'
 import { Navigation } from './collections/Navigation'
-
-import { seo } from '@payloadcms/plugin-seo'
+import { azureStorage } from '@payloadcms/storage-azure'
+import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage'
+import { seoPlugin } from '@payloadcms/plugin-seo'
 import type {} from '@payloadcms/plugin-seo'
 import { Events } from './collections/Events'
 import { Footers } from './collections/Footers'
@@ -34,13 +32,6 @@ const dirname = path.dirname(filename)
 const generateTitle = () => {
   return 'Stratton School'
 }
-
-const adapter = azureBlobStorageAdapter({
-  connectionString: process.env.AZURE_STORAGE_CONNECTION_STRING!,
-  containerName: process.env.AZURE_STORAGE_CONTAINER_NAME!,
-  allowContainerCreate: true,
-  baseURL: process.env.AZURE_STORAGE_BASE_URL!,
-})
 
 export default buildConfig({
   admin: {
@@ -85,20 +76,23 @@ export default buildConfig({
   }),
 
   plugins: [
-    cloudStorage({
+    azureStorage({
       collections: {
         media: {
-          adapter: adapter,
           disableLocalStorage: true,
         },
       },
+      connectionString: process.env.AZURE_STORAGE_CONNECTION_STRING!,
+      containerName: process.env.AZURE_STORAGE_CONTAINER_NAME!,
+      allowContainerCreate: true,
+      baseURL: process.env.AZURE_STORAGE_BASE_URL!,
     }),
-    seo({
+    seoPlugin({
       collections: ['pages'],
       generateTitle,
       uploadsCollection: 'media',
     }),
-    nestedDocs({
+    nestedDocsPlugin({
       collections: ['pages'],
       generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
       generateLabel: (doc, currentDoc) => currentDoc.title as string,
